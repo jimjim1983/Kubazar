@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677866A1D086EEE0057581D /* AppDelegate.swift */; };
+		A677866D1D086EEE0057581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A677866C1D086EEE0057581D /* Assets.xcassets */; };
+		A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A677866E1D086EEE0057581D /* LaunchScreen.storyboard */; };
+		A677867B1D086EEE0057581D /* KubazarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677867A1D086EEE0057581D /* KubazarTests.swift */; };
+		A67786861D086EEE0057581D /* KubazarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67786851D086EEE0057581D /* KubazarUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A67786771D086EEE0057581D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A677865F1D086EEE0057581D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A67786661D086EEE0057581D;
+			remoteInfo = Kubazar;
+		};
+		A67786821D086EEE0057581D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A677865F1D086EEE0057581D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A67786661D086EEE0057581D;
+			remoteInfo = Kubazar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A67786671D086EEE0057581D /* Kubazar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kubazar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A677866A1D086EEE0057581D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A677866C1D086EEE0057581D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A677866F1D086EEE0057581D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A67786711D086EEE0057581D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67786761D086EEE0057581D /* KubazarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KubazarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A677867A1D086EEE0057581D /* KubazarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KubazarTests.swift; sourceTree = "<group>"; };
+		A677867C1D086EEE0057581D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67786811D086EEE0057581D /* KubazarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KubazarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67786851D086EEE0057581D /* KubazarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KubazarUITests.swift; sourceTree = "<group>"; };
+		A67786871D086EEE0057581D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A67786641D086EEE0057581D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67786731D086EEE0057581D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A677867E1D086EEE0057581D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A677865E1D086EEE0057581D = {
+			isa = PBXGroup;
+			children = (
+				A67786691D086EEE0057581D /* Kubazar */,
+				A67786791D086EEE0057581D /* KubazarTests */,
+				A67786841D086EEE0057581D /* KubazarUITests */,
+				A67786681D086EEE0057581D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A67786681D086EEE0057581D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A67786671D086EEE0057581D /* Kubazar.app */,
+				A67786761D086EEE0057581D /* KubazarTests.xctest */,
+				A67786811D086EEE0057581D /* KubazarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A67786691D086EEE0057581D /* Kubazar */ = {
+			isa = PBXGroup;
+			children = (
+				A677866A1D086EEE0057581D /* AppDelegate.swift */,
+				A677866C1D086EEE0057581D /* Assets.xcassets */,
+				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
+				A67786711D086EEE0057581D /* Info.plist */,
+			);
+			path = Kubazar;
+			sourceTree = "<group>";
+		};
+		A67786791D086EEE0057581D /* KubazarTests */ = {
+			isa = PBXGroup;
+			children = (
+				A677867A1D086EEE0057581D /* KubazarTests.swift */,
+				A677867C1D086EEE0057581D /* Info.plist */,
+			);
+			path = KubazarTests;
+			sourceTree = "<group>";
+		};
+		A67786841D086EEE0057581D /* KubazarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A67786851D086EEE0057581D /* KubazarUITests.swift */,
+				A67786871D086EEE0057581D /* Info.plist */,
+			);
+			path = KubazarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A67786661D086EEE0057581D /* Kubazar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A677868A1D086EEE0057581D /* Build configuration list for PBXNativeTarget "Kubazar" */;
+			buildPhases = (
+				A67786631D086EEE0057581D /* Sources */,
+				A67786641D086EEE0057581D /* Frameworks */,
+				A67786651D086EEE0057581D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kubazar;
+			productName = Kubazar;
+			productReference = A67786671D086EEE0057581D /* Kubazar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A67786751D086EEE0057581D /* KubazarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A677868D1D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarTests" */;
+			buildPhases = (
+				A67786721D086EEE0057581D /* Sources */,
+				A67786731D086EEE0057581D /* Frameworks */,
+				A67786741D086EEE0057581D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A67786781D086EEE0057581D /* PBXTargetDependency */,
+			);
+			name = KubazarTests;
+			productName = KubazarTests;
+			productReference = A67786761D086EEE0057581D /* KubazarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A67786801D086EEE0057581D /* KubazarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A67786901D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarUITests" */;
+			buildPhases = (
+				A677867D1D086EEE0057581D /* Sources */,
+				A677867E1D086EEE0057581D /* Frameworks */,
+				A677867F1D086EEE0057581D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A67786831D086EEE0057581D /* PBXTargetDependency */,
+			);
+			name = KubazarUITests;
+			productName = KubazarUITests;
+			productReference = A67786811D086EEE0057581D /* KubazarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A677865F1D086EEE0057581D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Jimsalabim;
+				TargetAttributes = {
+					A67786661D086EEE0057581D = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					A67786751D086EEE0057581D = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A67786661D086EEE0057581D;
+					};
+					A67786801D086EEE0057581D = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A67786661D086EEE0057581D;
+					};
+				};
+			};
+			buildConfigurationList = A67786621D086EEE0057581D /* Build configuration list for PBXProject "Kubazar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A677865E1D086EEE0057581D;
+			productRefGroup = A67786681D086EEE0057581D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A67786661D086EEE0057581D /* Kubazar */,
+				A67786751D086EEE0057581D /* KubazarTests */,
+				A67786801D086EEE0057581D /* KubazarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A67786651D086EEE0057581D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
+				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67786741D086EEE0057581D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A677867F1D086EEE0057581D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A67786631D086EEE0057581D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A67786721D086EEE0057581D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A677867B1D086EEE0057581D /* KubazarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A677867D1D086EEE0057581D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67786861D086EEE0057581D /* KubazarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A67786781D086EEE0057581D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A67786661D086EEE0057581D /* Kubazar */;
+			targetProxy = A67786771D086EEE0057581D /* PBXContainerItemProxy */;
+		};
+		A67786831D086EEE0057581D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A67786661D086EEE0057581D /* Kubazar */;
+			targetProxy = A67786821D086EEE0057581D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A677866E1D086EEE0057581D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A677866F1D086EEE0057581D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A67786881D086EEE0057581D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A67786891D086EEE0057581D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A677868B1D086EEE0057581D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kubazar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.Kubazar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A677868C1D086EEE0057581D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Kubazar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.Kubazar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A677868E1D086EEE0057581D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KubazarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.KubazarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kubazar.app/Kubazar";
+			};
+			name = Debug;
+		};
+		A677868F1D086EEE0057581D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = KubazarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.KubazarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kubazar.app/Kubazar";
+			};
+			name = Release;
+		};
+		A67786911D086EEE0057581D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KubazarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.KubazarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Kubazar;
+			};
+			name = Debug;
+		};
+		A67786921D086EEE0057581D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = KubazarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.KubazarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Kubazar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A67786621D086EEE0057581D /* Build configuration list for PBXProject "Kubazar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67786881D086EEE0057581D /* Debug */,
+				A67786891D086EEE0057581D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A677868A1D086EEE0057581D /* Build configuration list for PBXNativeTarget "Kubazar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A677868B1D086EEE0057581D /* Debug */,
+				A677868C1D086EEE0057581D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A677868D1D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A677868E1D086EEE0057581D /* Debug */,
+				A677868F1D086EEE0057581D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A67786901D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A67786911D086EEE0057581D /* Debug */,
+				A67786921D086EEE0057581D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A677865F1D086EEE0057581D /* Project object */;
+}
