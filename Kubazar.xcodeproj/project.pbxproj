@@ -12,6 +12,11 @@
 		A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A677866E1D086EEE0057581D /* LaunchScreen.storyboard */; };
 		A677867B1D086EEE0057581D /* KubazarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677867A1D086EEE0057581D /* KubazarTests.swift */; };
 		A67786861D086EEE0057581D /* KubazarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67786851D086EEE0057581D /* KubazarUITests.swift */; };
+		F252A5C61D13007700CBDFD2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */; };
+		F252A5C81D13008600CBDFD2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */; };
+		F252A5CA1D13009300CBDFD2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */; };
+		F252A5D11D13052000CBDFD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */; };
+		F252A5D21D13052000CBDFD2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F252A5D01D13052000CBDFD2 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,11 @@
 		A67786811D086EEE0057581D /* KubazarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KubazarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67786851D086EEE0057581D /* KubazarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KubazarUITests.swift; sourceTree = "<group>"; };
 		A67786871D086EEE0057581D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		F252A5D01D13052000CBDFD2 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F252A5C81D13008600CBDFD2 /* FBSDKLoginKit.framework in Frameworks */,
+				F252A5C61D13007700CBDFD2 /* FBSDKCoreKit.framework in Frameworks */,
+				F252A5CA1D13009300CBDFD2 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,9 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
+				F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */,
+				F252A5D01D13052000CBDFD2 /* LoginViewController.xib */,
 				A677866C1D086EEE0057581D /* Assets.xcassets */,
 				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
 				A67786711D086EEE0057581D /* Info.plist */,
+				F252A5C41D12FEDA00CBDFD2 /* Frameworks */,
 			);
 			path = Kubazar;
 			sourceTree = "<group>";
@@ -117,6 +133,16 @@
 				A67786871D086EEE0057581D /* Info.plist */,
 			);
 			path = KubazarUITests;
+			sourceTree = "<group>";
+		};
+		F252A5C41D12FEDA00CBDFD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */,
+				F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */,
+				F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +251,7 @@
 			files = (
 				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
+				F252A5D21D13052000CBDFD2 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F252A5D11D13052000CBDFD2 /* LoginViewController.swift in Sources */,
 				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +413,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kubazar",
+				);
 				INFOPLIST_FILE = Kubazar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.Kubazar;
@@ -397,6 +429,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Kubazar",
+				);
 				INFOPLIST_FILE = Kubazar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Jimsalabim.Kubazar;
@@ -470,6 +506,7 @@
 				A677868C1D086EEE0057581D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A677868D1D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +515,7 @@
 				A677868F1D086EEE0057581D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A67786901D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarUITests" */ = {
 			isa = XCConfigurationList;
@@ -486,6 +524,7 @@
 				A67786921D086EEE0057581D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
