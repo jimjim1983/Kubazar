@@ -14,8 +14,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let screenWidth = UIScreen.mainScreen().bounds.size.width
+        let screenHeight = UIScreen.mainScreen().bounds.size.height
         let loginButton = FBSDKLoginButton()
-        loginButton.center = self.view.center
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+        loginButton.center = CGPointMake(screenWidth/2, screenHeight/2)
         self.view.addSubview(loginButton)
 
         // Do any additional setup after loading the view.
