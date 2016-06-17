@@ -16,7 +16,6 @@
 		F252A5C81D13008600CBDFD2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */; };
 		F252A5CA1D13009300CBDFD2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */; };
 		F252A5D11D13052000CBDFD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */; };
-		F252A5D21D13052000CBDFD2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F252A5D01D13052000CBDFD2 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
-		F252A5D01D13052000CBDFD2 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 			children = (
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
 				F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */,
-				F252A5D01D13052000CBDFD2 /* LoginViewController.xib */,
 				A677866C1D086EEE0057581D /* Assets.xcassets */,
 				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
 				A67786711D086EEE0057581D /* Info.plist */,
@@ -251,7 +248,6 @@
 			files = (
 				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
-				F252A5D21D13052000CBDFD2 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
