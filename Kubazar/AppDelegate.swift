@@ -23,6 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
+        // the following code doesn't work :(
+//        if FBSDKAccessToken.currentAccessToken() != nil {
+//            let startGameVC = StartGameViewController()
+//            self.window?.rootViewController = startGameVC
+//        } else {
+//            let loginVC = LoginViewController()
+//            self.window?.rootViewController = loginVC
+//        }
+        
         let loginVC = LoginViewController()
         self.window?.rootViewController = loginVC
         
@@ -57,8 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
-        return true
+       return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+//        return true
     }
     
 

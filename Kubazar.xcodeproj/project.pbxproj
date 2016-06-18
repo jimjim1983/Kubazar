@@ -16,6 +16,8 @@
 		F252A5C81D13008600CBDFD2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */; };
 		F252A5CA1D13009300CBDFD2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */; };
 		F252A5D11D13052000CBDFD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */; };
+		F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */; };
+		F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartGameViewController.swift; path = ../StartGameViewController.swift; sourceTree = "<group>"; };
+		F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartGameViewController.xib; path = ../StartGameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			children = (
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
 				F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */,
+				F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */,
+				F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */,
 				A677866C1D086EEE0057581D /* Assets.xcassets */,
 				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
 				A67786711D086EEE0057581D /* Info.plist */,
@@ -247,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
+				F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +281,7 @@
 			files = (
 				F252A5D11D13052000CBDFD2 /* LoginViewController.swift in Sources */,
 				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,
+				F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
