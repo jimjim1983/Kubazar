@@ -19,11 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        
         // Override point for customization after application launch.
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
-        // the following code doesn't work :(
+        let welcomeVC = WelcomeViewController()
+        self.window?.rootViewController = welcomeVC
+        
+        
+//     //    the following code doesn't work :(
 //        if FBSDKAccessToken.currentAccessToken() != nil {
 //            let startGameVC = StartGameViewController()
 //            self.window?.rootViewController = startGameVC
@@ -31,11 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            let loginVC = LoginViewController()
 //            self.window?.rootViewController = loginVC
 //        }
-        
-        let loginVC = LoginViewController()
-        self.window?.rootViewController = loginVC
-        
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+//        
+
+//        
+//        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }

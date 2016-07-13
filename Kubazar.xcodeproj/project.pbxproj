@@ -15,9 +15,11 @@
 		F252A5C61D13007700CBDFD2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */; };
 		F252A5C81D13008600CBDFD2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */; };
 		F252A5CA1D13009300CBDFD2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */; };
-		F252A5D11D13052000CBDFD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */; };
+		F252A5D11D13052000CBDFD2 /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5CF1D13052000CBDFD2 /* FacebookLoginViewController.swift */; };
 		F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */; };
 		F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */; };
+		F25B56191D35E51100E4905B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B56171D35E51100E4905B /* WelcomeViewController.swift */; };
+		F25B561A1D35E51100E4905B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25B56181D35E51100E4905B /* WelcomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +54,11 @@
 		F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
-		F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../LoginViewController.swift; sourceTree = "<group>"; };
+		F252A5CF1D13052000CBDFD2 /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = ../FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartGameViewController.swift; path = ../StartGameViewController.swift; sourceTree = "<group>"; };
 		F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartGameViewController.xib; path = ../StartGameViewController.xib; sourceTree = "<group>"; };
+		F25B56171D35E51100E4905B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F25B56181D35E51100E4905B /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,9 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
-				F252A5CF1D13052000CBDFD2 /* LoginViewController.swift */,
-				F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */,
-				F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */,
+				F25B56171D35E51100E4905B /* WelcomeViewController.swift */,
+				F25B56181D35E51100E4905B /* WelcomeViewController.xib */,
+				F25B56161D35E44A00E4905B /* Facebook */,
 				A677866C1D086EEE0057581D /* Assets.xcassets */,
 				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
 				A67786711D086EEE0057581D /* Info.plist */,
@@ -146,6 +150,16 @@
 				F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F25B56161D35E44A00E4905B /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				F252A5CF1D13052000CBDFD2 /* FacebookLoginViewController.swift */,
+				F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */,
+				F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */,
+			);
+			name = Facebook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25B561A1D35E51100E4905B /* WelcomeViewController.xib in Resources */,
 				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
 				F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
@@ -279,7 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F252A5D11D13052000CBDFD2 /* LoginViewController.swift in Sources */,
+				F25B56191D35E51100E4905B /* WelcomeViewController.swift in Sources */,
+				F252A5D11D13052000CBDFD2 /* FacebookLoginViewController.swift in Sources */,
 				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,
 				F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */,
 			);
