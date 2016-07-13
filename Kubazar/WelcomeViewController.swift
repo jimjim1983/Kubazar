@@ -43,6 +43,8 @@ class WelcomeViewController: UIViewController {
         loginButton.alpha = 1
         signupButton.alpha = 1
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

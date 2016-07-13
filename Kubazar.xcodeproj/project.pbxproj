@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4AE252314831068139B7A1 /* Pods_Kubazar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF9460E9538604A3E89F69A5 /* Pods_Kubazar.framework */; };
+		58B66B74F42B32395A5B26D4 /* Pods_KubazarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A179A604EC60815716572F /* Pods_KubazarUITests.framework */; };
 		A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677866A1D086EEE0057581D /* AppDelegate.swift */; };
 		A677866D1D086EEE0057581D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A677866C1D086EEE0057581D /* Assets.xcassets */; };
 		A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A677866E1D086EEE0057581D /* LaunchScreen.storyboard */; };
@@ -20,6 +22,8 @@
 		F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */; };
 		F25B56191D35E51100E4905B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B56171D35E51100E4905B /* WelcomeViewController.swift */; };
 		F25B561A1D35E51100E4905B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25B56181D35E51100E4905B /* WelcomeViewController.xib */; };
+		F25B561C1D35F0A600E4905B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */; };
+		F30DD226863A58B9A6B7772E /* Pods_KubazarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C622D14510274C6504EBC6 /* Pods_KubazarTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47ECFBFD0C92D96E4745C6A7 /* Pods-KubazarUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KubazarUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KubazarUITests/Pods-KubazarUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		52F7AD396A1FD95293D22468 /* Pods-Kubazar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kubazar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kubazar/Pods-Kubazar.debug.xcconfig"; sourceTree = "<group>"; };
+		87573AB53594782A46B2CDE7 /* Pods-KubazarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KubazarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KubazarTests/Pods-KubazarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A67786671D086EEE0057581D /* Kubazar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kubazar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A677866A1D086EEE0057581D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A677866C1D086EEE0057581D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +58,11 @@
 		A67786811D086EEE0057581D /* KubazarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KubazarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67786851D086EEE0057581D /* KubazarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KubazarUITests.swift; sourceTree = "<group>"; };
 		A67786871D086EEE0057581D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A179A604EC60815716572F /* Pods_KubazarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KubazarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAA9205D949A65B50995A170 /* Pods-Kubazar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kubazar.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kubazar/Pods-Kubazar.release.xcconfig"; sourceTree = "<group>"; };
+		CF9460E9538604A3E89F69A5 /* Pods_Kubazar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kubazar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1C622D14510274C6504EBC6 /* Pods_KubazarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KubazarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1ABCD4F7A4EDB1AF70E173 /* Pods-KubazarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KubazarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KubazarTests/Pods-KubazarTests.release.xcconfig"; sourceTree = "<group>"; };
 		F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -59,6 +71,8 @@
 		F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartGameViewController.xib; path = ../StartGameViewController.xib; sourceTree = "<group>"; };
 		F25B56171D35E51100E4905B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F25B56181D35E51100E4905B /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FEAE5C54F8EDCB59DF8E46CB /* Pods-KubazarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KubazarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KubazarUITests/Pods-KubazarUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +83,7 @@
 				F252A5C81D13008600CBDFD2 /* FBSDKLoginKit.framework in Frameworks */,
 				F252A5C61D13007700CBDFD2 /* FBSDKCoreKit.framework in Frameworks */,
 				F252A5CA1D13009300CBDFD2 /* FBSDKShareKit.framework in Frameworks */,
+				4F4AE252314831068139B7A1 /* Pods_Kubazar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30DD226863A58B9A6B7772E /* Pods_KubazarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B66B74F42B32395A5B26D4 /* Pods_KubazarUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +113,8 @@
 				A67786791D086EEE0057581D /* KubazarTests */,
 				A67786841D086EEE0057581D /* KubazarUITests */,
 				A67786681D086EEE0057581D /* Products */,
+				D4B9F4BAEB48FC0F6AB516F1 /* Pods */,
+				F0E367E154D7FCCD4338DC6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +138,7 @@
 				A677866C1D086EEE0057581D /* Assets.xcassets */,
 				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
 				A67786711D086EEE0057581D /* Info.plist */,
+				F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */,
 				F252A5C41D12FEDA00CBDFD2 /* Frameworks */,
 			);
 			path = Kubazar;
@@ -140,6 +160,29 @@
 				A67786871D086EEE0057581D /* Info.plist */,
 			);
 			path = KubazarUITests;
+			sourceTree = "<group>";
+		};
+		D4B9F4BAEB48FC0F6AB516F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52F7AD396A1FD95293D22468 /* Pods-Kubazar.debug.xcconfig */,
+				BAA9205D949A65B50995A170 /* Pods-Kubazar.release.xcconfig */,
+				87573AB53594782A46B2CDE7 /* Pods-KubazarTests.debug.xcconfig */,
+				EA1ABCD4F7A4EDB1AF70E173 /* Pods-KubazarTests.release.xcconfig */,
+				47ECFBFD0C92D96E4745C6A7 /* Pods-KubazarUITests.debug.xcconfig */,
+				FEAE5C54F8EDCB59DF8E46CB /* Pods-KubazarUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0E367E154D7FCCD4338DC6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF9460E9538604A3E89F69A5 /* Pods_Kubazar.framework */,
+				D1C622D14510274C6504EBC6 /* Pods_KubazarTests.framework */,
+				B5A179A604EC60815716572F /* Pods_KubazarUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F252A5C41D12FEDA00CBDFD2 /* Frameworks */ = {
@@ -169,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A677868A1D086EEE0057581D /* Build configuration list for PBXNativeTarget "Kubazar" */;
 			buildPhases = (
+				D9CAB867CDFB087271355065 /* [CP] Check Pods Manifest.lock */,
 				A67786631D086EEE0057581D /* Sources */,
 				A67786641D086EEE0057581D /* Frameworks */,
 				A67786651D086EEE0057581D /* Resources */,
+				1D1CC0A39D20820C444AA8CC /* [CP] Embed Pods Frameworks */,
+				C6A3FC3872596D62915B7009 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A677868D1D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarTests" */;
 			buildPhases = (
+				966AED073AC15E809A7EC8FE /* [CP] Check Pods Manifest.lock */,
 				A67786721D086EEE0057581D /* Sources */,
 				A67786731D086EEE0057581D /* Frameworks */,
 				A67786741D086EEE0057581D /* Resources */,
+				4731B47D257EAA1EBACA25F5 /* [CP] Embed Pods Frameworks */,
+				771AA61C6F53AEBD0F1BB77C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A67786901D086EEE0057581D /* Build configuration list for PBXNativeTarget "KubazarUITests" */;
 			buildPhases = (
+				137F81AC7C2F6BEB95BB1BCE /* [CP] Check Pods Manifest.lock */,
 				A677867D1D086EEE0057581D /* Sources */,
 				A677867E1D086EEE0057581D /* Frameworks */,
 				A677867F1D086EEE0057581D /* Resources */,
+				E850555F5E8EDF89734623EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +319,7 @@
 			files = (
 				F25B561A1D35E51100E4905B /* WelcomeViewController.xib in Resources */,
 				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
+				F25B561C1D35F0A600E4905B /* GoogleService-Info.plist in Resources */,
 				F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
 			);
@@ -288,6 +340,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		137F81AC7C2F6BEB95BB1BCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1D1CC0A39D20820C444AA8CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kubazar/Pods-Kubazar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4731B47D257EAA1EBACA25F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KubazarTests/Pods-KubazarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		771AA61C6F53AEBD0F1BB77C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KubazarTests/Pods-KubazarTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		966AED073AC15E809A7EC8FE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C6A3FC3872596D62915B7009 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kubazar/Pods-Kubazar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9CAB867CDFB087271355065 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E850555F5E8EDF89734623EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KubazarUITests/Pods-KubazarUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A67786631D086EEE0057581D /* Sources */ = {
@@ -431,6 +606,7 @@
 		};
 		A677868B1D086EEE0057581D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52F7AD396A1FD95293D22468 /* Pods-Kubazar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -447,6 +623,7 @@
 		};
 		A677868C1D086EEE0057581D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAA9205D949A65B50995A170 /* Pods-Kubazar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -463,6 +640,7 @@
 		};
 		A677868E1D086EEE0057581D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87573AB53594782A46B2CDE7 /* Pods-KubazarTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KubazarTests/Info.plist;
@@ -475,6 +653,7 @@
 		};
 		A677868F1D086EEE0057581D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA1ABCD4F7A4EDB1AF70E173 /* Pods-KubazarTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = KubazarTests/Info.plist;
@@ -487,6 +666,7 @@
 		};
 		A67786911D086EEE0057581D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47ECFBFD0C92D96E4745C6A7 /* Pods-KubazarUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KubazarUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -498,6 +678,7 @@
 		};
 		A67786921D086EEE0057581D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEAE5C54F8EDCB59DF8E46CB /* Pods-KubazarUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = KubazarUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
