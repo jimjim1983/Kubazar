@@ -20,9 +20,19 @@
 		F252A5D11D13052000CBDFD2 /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5CF1D13052000CBDFD2 /* FacebookLoginViewController.swift */; };
 		F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */; };
 		F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */; };
-		F25B56191D35E51100E4905B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B56171D35E51100E4905B /* WelcomeViewController.swift */; };
-		F25B561A1D35E51100E4905B /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F25B56181D35E51100E4905B /* WelcomeViewController.xib */; };
 		F25B561C1D35F0A600E4905B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */; };
+		F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */; };
+		F2C1A9ED1D36AA960063089F /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */; };
+		F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9F21D36C0C30063089F /* SignupViewController.swift */; };
+		F2C1A9F51D36C0C30063089F /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9F31D36C0C30063089F /* SignupViewController.xib */; };
+		F2C1A9F81D36D7960063089F /* BazarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9F61D36D7960063089F /* BazarViewController.swift */; };
+		F2C1A9F91D36D7960063089F /* BazarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9F71D36D7960063089F /* BazarViewController.xib */; };
+		F2C1A9FC1D36D7A60063089F /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9FA1D36D7A60063089F /* StartViewController.swift */; };
+		F2C1A9FD1D36D7A60063089F /* StartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9FB1D36D7A60063089F /* StartViewController.xib */; };
+		F2C1AA001D36D7B80063089F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */; };
+		F2C1AA011D36D7B80063089F /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */; };
+		F2C1AA041D36D7C90063089F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1AA021D36D7C90063089F /* InfoViewController.swift */; };
+		F2C1AA051D36D7C90063089F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1AA031D36D7C90063089F /* InfoViewController.xib */; };
 		F30DD226863A58B9A6B7772E /* Pods_KubazarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C622D14510274C6504EBC6 /* Pods_KubazarTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,9 +79,19 @@
 		F252A5CF1D13052000CBDFD2 /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = ../FacebookLoginViewController.swift; sourceTree = "<group>"; };
 		F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartGameViewController.swift; path = ../StartGameViewController.swift; sourceTree = "<group>"; };
 		F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartGameViewController.xib; path = ../StartGameViewController.xib; sourceTree = "<group>"; };
-		F25B56171D35E51100E4905B /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		F25B56181D35E51100E4905B /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		F2C1A9F21D36C0C30063089F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		F2C1A9F31D36C0C30063089F /* SignupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		F2C1A9F61D36D7960063089F /* BazarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BazarViewController.swift; sourceTree = "<group>"; };
+		F2C1A9F71D36D7960063089F /* BazarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BazarViewController.xib; sourceTree = "<group>"; };
+		F2C1A9FA1D36D7A60063089F /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		F2C1A9FB1D36D7A60063089F /* StartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartViewController.xib; sourceTree = "<group>"; };
+		F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
+		F2C1AA021D36D7C90063089F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		F2C1AA031D36D7C90063089F /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
 		FEAE5C54F8EDCB59DF8E46CB /* Pods-KubazarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KubazarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KubazarUITests/Pods-KubazarUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,13 +152,23 @@
 			isa = PBXGroup;
 			children = (
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
-				F25B56171D35E51100E4905B /* WelcomeViewController.swift */,
-				F25B56181D35E51100E4905B /* WelcomeViewController.xib */,
-				F25B56161D35E44A00E4905B /* Facebook */,
+				F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */,
+				F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */,
+				F2C1A9F61D36D7960063089F /* BazarViewController.swift */,
+				F2C1A9F71D36D7960063089F /* BazarViewController.xib */,
+				F2C1A9FA1D36D7A60063089F /* StartViewController.swift */,
+				F2C1A9FB1D36D7A60063089F /* StartViewController.xib */,
+				F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */,
+				F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */,
+				F2C1AA021D36D7C90063089F /* InfoViewController.swift */,
+				F2C1AA031D36D7C90063089F /* InfoViewController.xib */,
+				F2C1A9F21D36C0C30063089F /* SignupViewController.swift */,
+				F2C1A9F31D36C0C30063089F /* SignupViewController.xib */,
 				A677866C1D086EEE0057581D /* Assets.xcassets */,
 				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
 				A67786711D086EEE0057581D /* Info.plist */,
 				F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */,
+				F25B56161D35E44A00E4905B /* Facebook */,
 				F252A5C41D12FEDA00CBDFD2 /* Frameworks */,
 			);
 			path = Kubazar;
@@ -317,11 +347,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F25B561A1D35E51100E4905B /* WelcomeViewController.xib in Resources */,
 				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
 				F25B561C1D35F0A600E4905B /* GoogleService-Info.plist in Resources */,
 				F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
+				F2C1A9F51D36C0C30063089F /* SignupViewController.xib in Resources */,
+				F2C1A9FD1D36D7A60063089F /* StartViewController.xib in Resources */,
+				F2C1A9F91D36D7960063089F /* BazarViewController.xib in Resources */,
+				F2C1A9ED1D36AA960063089F /* WelcomeViewController.xib in Resources */,
+				F2C1AA051D36D7C90063089F /* InfoViewController.xib in Resources */,
+				F2C1AA011D36D7B80063089F /* FriendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,10 +504,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F25B56191D35E51100E4905B /* WelcomeViewController.swift in Sources */,
+				F2C1AA001D36D7B80063089F /* FriendsViewController.swift in Sources */,
+				F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */,
+				F2C1A9FC1D36D7A60063089F /* StartViewController.swift in Sources */,
+				F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */,
+				F2C1AA041D36D7C90063089F /* InfoViewController.swift in Sources */,
 				F252A5D11D13052000CBDFD2 /* FacebookLoginViewController.swift in Sources */,
 				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,
 				F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */,
+				F2C1A9F81D36D7960063089F /* BazarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
