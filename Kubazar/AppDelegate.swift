@@ -17,10 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var tabBarController: UITabBarController?
 
 //    let ref = Firebase(url: "https://kubazar-68697.firebaseio.com/")
+//    deprecated b/c old firebase
+
+    var rootRef = FIRDatabase.database().reference()
+// Database URL is automatically determined from GoogleService-Info.plist
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         FIRApp.configure()
+        
+        FIRDatabase.database().persistenceEnabled = true
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         

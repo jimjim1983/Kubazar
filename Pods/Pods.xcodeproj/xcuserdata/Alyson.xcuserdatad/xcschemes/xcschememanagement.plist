@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Firebase.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Kubazar.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>232E951D5B990AB2509CD0E1D18B98A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>3D0BE8355069168FAA45334DFF1E2603</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A82CF794E0976E24C4378031A88A9B6D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A8FD42863FEB4D97207CF10A83BC8FD0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B7AC9326D819482593FE118E915409D7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
