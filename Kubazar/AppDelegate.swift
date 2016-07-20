@@ -19,8 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    let ref = Firebase(url: "https://kubazar-68697.firebaseio.com/")
 //    deprecated b/c old firebase
 
-    var rootRef = FIRDatabase.database().reference()
+//    var rootRef = FIRDatabase.database().reference()
 // Database URL is automatically determined from GoogleService-Info.plist
+// can't put this code here because Firebase needs to be configured first
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -44,19 +45,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabBarController?.viewControllers = controllers
         
         //firstTab.tabBarItem =
+    
         
-//        ref.observeAuthEventWithBlock { (authData) -> Void in
-//            // 2
-//            if authData != nil {
-//                // 3
-//                self.window?.rootViewController = self.tabBarController
-//                
-//            } else {
-//                let welcomeVC = WelcomeViewController()
-//                self.window?.rootViewController = welcomeVC
-//            }
-//            
-//        }
+        FIRAuth.auth()!.addAuthStateDidChangeListener() { (auth, user) in
+            if let user = user {
+                print("User is signed in with uid:", user.uid)
+                self.window?.rootViewController = self.tabBarController
+            } else {
+                print("No user is signed in.")
+                let welcomeVC = WelcomeViewController()
+                self.window?.rootViewController = welcomeVC
+            }
+        }
+        
+
         
         self.window?.rootViewController = self.tabBarController
         
