@@ -181,7 +181,32 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cE-b1-XF9" userLabel="Third View">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KubazarMascot" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-c5-mL8">
+                            <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="bcL-YF-fGx"/>
+                                <constraint firstAttribute="width" constant="240" id="xQ1-uo-0wH"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats! Welcome to Kubazar!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-mO-e7L">
+                            <rect key="frame" x="0.0" y="124" width="600" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="DDd-Qi-ODa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="nbm-mO-e7L" firstAttribute="leading" secondItem="7cE-b1-XF9" secondAttribute="leading" id="01L-cn-qIK"/>
+                        <constraint firstAttribute="trailing" secondItem="nbm-mO-e7L" secondAttribute="trailing" id="0eZ-Av-Z5e"/>
+                        <constraint firstItem="0gK-c5-mL8" firstAttribute="centerX" secondItem="7cE-b1-XF9" secondAttribute="centerX" id="gTB-LE-yOP"/>
+                        <constraint firstItem="0gK-c5-mL8" firstAttribute="top" secondItem="nbm-mO-e7L" secondAttribute="bottom" constant="91" id="hpj-AV-IYO"/>
+                        <constraint firstItem="0gK-c5-mL8" firstAttribute="centerY" secondItem="7cE-b1-XF9" secondAttribute="centerY" id="lJU-8Y-AiC"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -202,4 +227,7 @@
             <point key="canvasLocation" x="111" y="314"/>
         </view>
     </objects>
+    <resources>
+        <image name="KubazarMascot" width="968" height="1463"/>
+    </resources>
 </document>

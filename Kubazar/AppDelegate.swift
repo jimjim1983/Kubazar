@@ -8,15 +8,19 @@
 
 import UIKit
 import FBSDKCoreKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var tabBarController: UITabBarController?
 
+//    let ref = Firebase(url: "https://kubazar-68697.firebaseio.com/")
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        FIRApp.configure()
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
@@ -25,8 +29,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.whiteColor()
         self.window!.makeKeyAndVisible()
         
-        let welcomeVC = WelcomeViewController()
-        self.window?.rootViewController = welcomeVC
+        tabBarController = UITabBarController()
+        let firstTab = BazarViewController(nibName: "BazarViewController", bundle: nil)
+        let secondTab = StartViewController(nibName: "StartViewController", bundle: nil)
+        let thirdTab = FriendsViewController(nibName: "FriendsViewController", bundle: nil)
+        let fourthTab = InfoViewController(nibName: "InfoViewController", bundle: nil)
+        let controllers = [firstTab, secondTab, thirdTab, fourthTab]
+        tabBarController?.viewControllers = controllers
+        
+        //firstTab.tabBarItem =
+        
+//        ref.observeAuthEventWithBlock { (authData) -> Void in
+//            // 2
+//            if authData != nil {
+//                // 3
+//                self.window?.rootViewController = self.tabBarController
+//                
+//            } else {
+//                let welcomeVC = WelcomeViewController()
+//                self.window?.rootViewController = welcomeVC
+//            }
+//            
+//        }
+        
+        self.window?.rootViewController = self.tabBarController
         
         
 //     //    the following code doesn't work :(
@@ -39,6 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        }
 //        
 
+        
+        
 //        
 //        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
