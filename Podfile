@@ -11,9 +11,7 @@ target 'Kubazar' do
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
-pod 'Firebase/Invites'
-pod 'Firebase/Messaging'
-pod 'Firebase/DynamicLinks'
+
 
 
 end

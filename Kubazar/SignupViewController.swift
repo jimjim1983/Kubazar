@@ -16,6 +16,15 @@ class SignupViewController: UIViewController {
     
     @IBOutlet weak var thirdView: UIView!
     
+    @IBOutlet weak var signupEmailTextField: UITextField!
+    
+    @IBOutlet weak var signupUsernameTextField: UITextField!
+    
+    @IBOutlet weak var signupBirthdateDatePicker: UIDatePicker!
+    
+    @IBOutlet weak var signupPasswordTextField: UITextField!
+    
+    
     var timer = NSTimer()
     
 
