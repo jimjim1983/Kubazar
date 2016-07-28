@@ -47,10 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //firstTab.tabBarItem =
     
         
+        
+        
         FIRAuth.auth()!.addAuthStateDidChangeListener() { (auth, user) in
             if let user = user {
                 print("User is signed in with uid:", user.uid)
                 self.window?.rootViewController = self.tabBarController
+                self.tabBarController?.selectedIndex = 0
             } else {
                 print("No user is signed in.")
                 let welcomeVC = WelcomeViewController()

@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
+                <outlet property="emailTextField" destination="jA2-Yt-xk9" id="wGP-We-iez"/>
                 <outlet property="kubazarLogoImageView" destination="aYq-uA-z8N" id="hWh-1O-hfI"/>
                 <outlet property="loginButton" destination="qKE-Wt-PCK" id="p1B-Ew-n8I"/>
                 <outlet property="passwordTextField" destination="qcu-ia-mRQ" id="727-BL-PW1"/>
                 <outlet property="signupButton" destination="UEh-xZ-TXp" id="GGu-wU-Yyr"/>
-                <outlet property="usernameTextField" destination="jA2-Yt-xk9" id="jqb-ba-3uc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="welcomeLabel" destination="OsY-iZ-6KO" id="aaC-k5-muU"/>
             </connections>
@@ -30,7 +30,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsY-iZ-6KO">
                     <rect key="frame" x="0.0" y="52" width="600" height="24.5"/>
                     <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEh-xZ-TXp">
@@ -54,10 +54,10 @@
                         <action selector="loginButtonPressed:" destination="-1" eventType="touchUpInside" id="2w4-AK-VpZ"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jA2-Yt-xk9">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jA2-Yt-xk9">
                     <rect key="frame" x="100" y="359" width="400" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcu-ia-mRQ">
                     <rect key="frame" x="100" y="411" width="400" height="30"/>
@@ -65,7 +65,7 @@
                         <constraint firstAttribute="height" constant="30" id="MVh-dc-9vv"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

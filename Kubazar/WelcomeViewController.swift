@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var welcomeLabel: UILabel!
     
@@ -18,7 +19,7 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet weak var signupButton: UIButton!
     
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -26,15 +27,61 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        
+        passwordTextField.delegate = self
 
         loginButton.alpha = 0
         signupButton.alpha = 0
         
-        usernameTextField.alpha = 0
+        emailTextField.alpha = 0
         passwordTextField.alpha = 0
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(WelcomeViewController.changeWelcomeLabel), userInfo: nil, repeats: false)
-        // Do any additional setup after loading the view.
+       
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
+    
+
+    func keyboardWillShow(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            if self.view.frame.origin.y == 0 {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.view.frame.origin.y -= keyboardSize.height
+                })
+            }
+        } else {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
+        }
+        print(self.view.frame.origin.y)
     }
     
     func changeWelcomeLabel() {
@@ -48,7 +95,7 @@ class WelcomeViewController: UIViewController {
         kubazarLogoImageView.alpha = 0
         loginButton.alpha = 1
         signupButton.alpha = 1
-        usernameTextField.alpha = 1
+        emailTextField.alpha = 1
         passwordTextField.alpha = 1
     }
 
@@ -58,7 +105,13 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {
-       
+        
+        if let email = emailTextField.text, password = passwordTextField.text {
+        
+        FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
+           
+        }
+        }
     }
 
 

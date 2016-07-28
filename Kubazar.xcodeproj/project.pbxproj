@@ -21,6 +21,9 @@
 		F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */; };
 		F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */; };
 		F25B561C1D35F0A600E4905B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */; };
+		F27718251D40711000EBB668 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27718241D40711000EBB668 /* ClientService.swift */; };
+		F27718271D41CC7800EBB668 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27718261D41CC7800EBB668 /* Alerts.swift */; };
+		F27718291D41E0B100EBB668 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27718281D41E0B100EBB668 /* User.swift */; };
 		F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */; };
 		F2C1A9ED1D36AA960063089F /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */; };
 		F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9F21D36C0C30063089F /* SignupViewController.swift */; };
@@ -80,6 +83,9 @@
 		F252A5D71D14EA6200CBDFD2 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartGameViewController.swift; path = ../StartGameViewController.swift; sourceTree = "<group>"; };
 		F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StartGameViewController.xib; path = ../StartGameViewController.xib; sourceTree = "<group>"; };
 		F25B561B1D35F0A600E4905B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F27718241D40711000EBB668 /* ClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
+		F27718261D41CC7800EBB668 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		F27718281D41E0B100EBB668 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		F2C1A9F21D36C0C30063089F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +157,9 @@
 		A67786691D086EEE0057581D /* Kubazar */ = {
 			isa = PBXGroup;
 			children = (
+				F27718281D41E0B100EBB668 /* User.swift */,
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
+				F27718241D40711000EBB668 /* ClientService.swift */,
 				F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */,
 				F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */,
 				F2C1A9F61D36D7960063089F /* BazarViewController.swift */,
@@ -160,6 +168,7 @@
 				F2C1A9FB1D36D7A60063089F /* StartViewController.xib */,
 				F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */,
 				F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */,
+				F27718261D41CC7800EBB668 /* Alerts.swift */,
 				F2C1AA021D36D7C90063089F /* InfoViewController.swift */,
 				F2C1AA031D36D7C90063089F /* InfoViewController.xib */,
 				F2C1A9F21D36C0C30063089F /* SignupViewController.swift */,
@@ -508,10 +517,13 @@
 				F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */,
 				F2C1A9FC1D36D7A60063089F /* StartViewController.swift in Sources */,
 				F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */,
+				F27718251D40711000EBB668 /* ClientService.swift in Sources */,
 				F2C1AA041D36D7C90063089F /* InfoViewController.swift in Sources */,
 				F252A5D11D13052000CBDFD2 /* FacebookLoginViewController.swift in Sources */,
 				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,
+				F27718291D41E0B100EBB668 /* User.swift in Sources */,
 				F252A5D91D14EA6200CBDFD2 /* StartGameViewController.swift in Sources */,
+				F27718271D41CC7800EBB668 /* Alerts.swift in Sources */,
 				F2C1A9F81D36D7960063089F /* BazarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

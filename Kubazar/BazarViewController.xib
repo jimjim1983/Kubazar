@@ -16,20 +16,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bazar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in0-bP-vkB">
-                    <rect key="frame" x="262" y="289.5" width="76" height="21"/>
+                    <rect key="frame" x="262" y="289" width="76" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="76" id="3TA-Kc-ZEX"/>
                         <constraint firstAttribute="height" constant="21" id="NAi-3Y-Y7J"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIk-g4-NuX">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                    <color key="backgroundColor" red="0.4039215686" green="1" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="c3K-kJ-rR5"/>
+                    </constraints>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="bazar" id="a6g-1l-5Cf"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="RIk-g4-NuX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4mJ-Q3-ePM"/>
                 <constraint firstItem="in0-bP-vkB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="50r-3S-8AW"/>
                 <constraint firstItem="in0-bP-vkB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9yv-Nm-zwd"/>
+                <constraint firstAttribute="trailing" secondItem="RIk-g4-NuX" secondAttribute="trailing" id="hfn-9a-GLf"/>
+                <constraint firstItem="RIk-g4-NuX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="icB-qe-9kN"/>
             </constraints>
         </view>
     </objects>

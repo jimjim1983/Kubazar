@@ -16,20 +16,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLI-28-rhU">
-                    <rect key="frame" x="279" y="289.5" width="42" height="21"/>
+                    <rect key="frame" x="279" y="289" width="42" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="42" id="Raq-SR-la5"/>
                         <constraint firstAttribute="height" constant="21" id="qXE-hR-UJW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="06N-x4-1Tw">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
+                    <color key="backgroundColor" red="0.4039215686" green="1" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="2p2-Tb-yNA"/>
+                    </constraints>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="start" id="nax-6v-Acn"/>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="06N-x4-1Tw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EXX-RE-mf1"/>
+                <constraint firstAttribute="trailing" secondItem="06N-x4-1Tw" secondAttribute="trailing" id="KfP-Zb-evY"/>
                 <constraint firstItem="yLI-28-rhU" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Tvk-gR-YXx"/>
                 <constraint firstItem="yLI-28-rhU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="clh-wa-UIb"/>
+                <constraint firstItem="06N-x4-1Tw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iqp-AX-JvE"/>
             </constraints>
         </view>
     </objects>

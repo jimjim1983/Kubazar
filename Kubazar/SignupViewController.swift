@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstView: UIView!
     
@@ -34,9 +35,24 @@ class SignupViewController: UIViewController {
         secondView.alpha = 0
         
         thirdView.alpha = 0
-        // Do any additional setup after loading the view.
+        
+        signupEmailTextField.delegate = self
+        
+        signupUsernameTextField.delegate = self
+        
+        signupPasswordTextField.delegate = self
+       
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
+    
+   
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,23 +61,43 @@ class SignupViewController: UIViewController {
 
     @IBAction func firstContinueButtonPressed(sender: AnyObject) {
         
-        firstView.alpha = 0
-        secondView.alpha = 1
+        self.firstView.alpha = 0
+        self.secondView.alpha = 1
+     
     }
     
   
     @IBAction func secondContinueButtonPressed(sender: AnyObject) {
         
-        secondView.alpha = 0
-        thirdView.alpha = 1
-        
-        timer = NSTimer.init(timeInterval: 1.0, target: self, selector: #selector(SignupViewController.loadKubazar), userInfo: nil, repeats: false)
+    createNewUser()
         
     }
     
-    func loadKubazar() {
-        //tabbar controller// app delegate
+    
+    func createNewUser() {
+        if let email = signupEmailTextField.text, password = signupPasswordTextField.text {
+            FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
+                
+                if error != nil {
+                    self.presentViewController(Alerts.showErrorMessage((error?.localizedDescription)!), animated: true, completion: nil)
+                    self.firstView.alpha = 1
+                    self.secondView.alpha = 0
+                    self.thirdView.alpha = 0
+                } else {
+                    
+                    self.secondView.alpha = 0
+                    self.thirdView.alpha = 1
+                   
+                    
+                    if let currentUser = user?.uid {
+                    print(currentUser)}
+                }
+            })
+            
+        }
     }
+   
+
     
 
 
