@@ -13,7 +13,7 @@ struct User {
     
     let username: String!
     let emailAddress: String!
-    let birthdate: String!
-//    let 
+//    let birthdate: String!
+    // let
     
 }

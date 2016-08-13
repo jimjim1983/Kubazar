@@ -81,7 +81,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
                 self.view.frame.origin.y += keyboardSize.height - offset.height
             })
         }
-        print(self.view.frame.origin.y)
+//        print(self.view.frame.origin.y)
     }
     
     func changeWelcomeLabel() {

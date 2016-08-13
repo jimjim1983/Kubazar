@@ -83,20 +83,36 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     self.firstView.alpha = 1
                     self.secondView.alpha = 0
                     self.thirdView.alpha = 0
+               
                 } else {
                     
                     self.secondView.alpha = 0
                     self.thirdView.alpha = 1
                    
-                    
                     if let currentUser = user?.uid {
-                    print(currentUser)}
+                    self.createNewUserProfile(currentUser)
+                }
                 }
             })
             
         }
     }
+        
    
+    func createNewUserProfile(uid: String) {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let birthdate = dateFormatter.stringFromDate(signupBirthdateDatePicker.date)
+        
+        let signupUsername = signupUsernameTextField.text
+        
+        ClientService.profileRef.child("\(uid)/username").setValue(signupUsername)
+        ClientService.profileRef.child("\(uid)/birthdate").setValue(birthdate)
+        
+    }
+    
 
     
 

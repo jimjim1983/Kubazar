@@ -16,14 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var tabBarController: UITabBarController?
 
-//    let ref = Firebase(url: "https://kubazar-68697.firebaseio.com/")
-//    deprecated b/c old firebase
-
-//    var rootRef = FIRDatabase.database().reference()
-// Database URL is automatically determined from GoogleService-Info.plist
-// can't put this code here because Firebase needs to be configured first
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        UINavigationBar.appearance().opaque = true
         
         FIRApp.configure()
         
@@ -46,16 +41,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //firstTab.tabBarItem =
     
-        
+        if let user = FIRAuth.auth()?.currentUser {
+            print("App Delegate says user is signed in with uid:", user.uid)
+            self.window?.rootViewController = self.tabBarController
+            self.tabBarController?.selectedIndex = 0
+
+        } else {
+            print("App Delegate says no user is signed in.")
+            let welcomeVC = WelcomeViewController()
+            self.window?.rootViewController = welcomeVC
+        }
         
         
         FIRAuth.auth()!.addAuthStateDidChangeListener() { (auth, user) in
             if let user = user {
-                print("User is signed in with uid:", user.uid)
+                print("Auth State Changed: User is signed in with uid:", user.uid)
                 self.window?.rootViewController = self.tabBarController
                 self.tabBarController?.selectedIndex = 0
             } else {
-                print("No user is signed in.")
+                print("Auth State Changed: No user is signed in.")
                 let welcomeVC = WelcomeViewController()
                 self.window?.rootViewController = welcomeVC
             }
@@ -63,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 
         
-        self.window?.rootViewController = self.tabBarController
+   //     self.window?.rootViewController = self.tabBarController
         
         
 //     //    the following code doesn't work :(

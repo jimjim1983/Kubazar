@@ -24,6 +24,10 @@
 		F27718251D40711000EBB668 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27718241D40711000EBB668 /* ClientService.swift */; };
 		F27718271D41CC7800EBB668 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27718261D41CC7800EBB668 /* Alerts.swift */; };
 		F27718291D41E0B100EBB668 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27718281D41E0B100EBB668 /* User.swift */; };
+		F2BF11921D57B1C300788E1D /* ActiveHaikusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF11901D57B1C300788E1D /* ActiveHaikusTableViewCell.swift */; };
+		F2BF11931D57B1C300788E1D /* ActiveHaikusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BF11911D57B1C300788E1D /* ActiveHaikusTableViewCell.xib */; };
+		F2BF11961D57B1D200788E1D /* CompletedHaikusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BF11941D57B1D200788E1D /* CompletedHaikusTableViewCell.swift */; };
+		F2BF11971D57B1D200788E1D /* CompletedHaikusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BF11951D57B1D200788E1D /* CompletedHaikusTableViewCell.xib */; };
 		F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */; };
 		F2C1A9ED1D36AA960063089F /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */; };
 		F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1A9F21D36C0C30063089F /* SignupViewController.swift */; };
@@ -86,6 +90,10 @@
 		F27718241D40711000EBB668 /* ClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientService.swift; sourceTree = "<group>"; };
 		F27718261D41CC7800EBB668 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		F27718281D41E0B100EBB668 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
+		F2BF11901D57B1C300788E1D /* ActiveHaikusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveHaikusTableViewCell.swift; sourceTree = "<group>"; };
+		F2BF11911D57B1C300788E1D /* ActiveHaikusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveHaikusTableViewCell.xib; sourceTree = "<group>"; };
+		F2BF11941D57B1D200788E1D /* CompletedHaikusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedHaikusTableViewCell.swift; sourceTree = "<group>"; };
+		F2BF11951D57B1D200788E1D /* CompletedHaikusTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedHaikusTableViewCell.xib; sourceTree = "<group>"; };
 		F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		F2C1A9F21D36C0C30063089F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +172,10 @@
 				F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */,
 				F2C1A9F61D36D7960063089F /* BazarViewController.swift */,
 				F2C1A9F71D36D7960063089F /* BazarViewController.xib */,
+				F2BF11901D57B1C300788E1D /* ActiveHaikusTableViewCell.swift */,
+				F2BF11911D57B1C300788E1D /* ActiveHaikusTableViewCell.xib */,
+				F2BF11941D57B1D200788E1D /* CompletedHaikusTableViewCell.swift */,
+				F2BF11951D57B1D200788E1D /* CompletedHaikusTableViewCell.xib */,
 				F2C1A9FA1D36D7A60063089F /* StartViewController.swift */,
 				F2C1A9FB1D36D7A60063089F /* StartViewController.xib */,
 				F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */,
@@ -356,10 +368,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BF11971D57B1D200788E1D /* CompletedHaikusTableViewCell.xib in Resources */,
 				A677866D1D086EEE0057581D /* Assets.xcassets in Resources */,
 				F25B561C1D35F0A600E4905B /* GoogleService-Info.plist in Resources */,
 				F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
+				F2BF11931D57B1C300788E1D /* ActiveHaikusTableViewCell.xib in Resources */,
 				F2C1A9F51D36C0C30063089F /* SignupViewController.xib in Resources */,
 				F2C1A9FD1D36D7A60063089F /* StartViewController.xib in Resources */,
 				F2C1A9F91D36D7960063089F /* BazarViewController.xib in Resources */,
@@ -513,11 +527,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BF11921D57B1C300788E1D /* ActiveHaikusTableViewCell.swift in Sources */,
 				F2C1AA001D36D7B80063089F /* FriendsViewController.swift in Sources */,
 				F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */,
 				F2C1A9FC1D36D7A60063089F /* StartViewController.swift in Sources */,
 				F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */,
 				F27718251D40711000EBB668 /* ClientService.swift in Sources */,
+				F2BF11961D57B1D200788E1D /* CompletedHaikusTableViewCell.swift in Sources */,
 				F2C1AA041D36D7C90063089F /* InfoViewController.swift in Sources */,
 				F252A5D11D13052000CBDFD2 /* FacebookLoginViewController.swift in Sources */,
 				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,

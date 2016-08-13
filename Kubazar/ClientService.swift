@@ -13,11 +13,61 @@ struct ClientService {
     
     static let rootRef = FIRDatabase.database().reference()
     
-    static let usersRef = rootRef.child("users")
+    // Database URL is automatically determined from GoogleService-Info.plist
+    
+    static let profileRef = rootRef.child("profile")
     
     static let activeHaikusRef = rootRef.child("activeHaikus")
     
     static let completedHaikusRef = rootRef.child("completedHaikus")
-//    
-//    static func getCurrentUser
+    
+    static let friendsRef = rootRef.child("friends")
+    
+    static func getCurrentUser(closure: (FIRUser) -> Void) {
+        
+        if let user = FIRAuth.auth()?.currentUser {
+        closure(user)
+        } else {
+             print("no user is currently logged in")
+        }
+        
+    }
+    
+//    static func getCurrentUserUID() -> String {
+//       
+//        let user = FIRAuth.auth()?.currentUser
+//        
+//        return user!.uid
+//    }
+//
+//    static func getCurrentUser() -> User {
+//       
+//        var name = String()
+//        var email = String()
+//        
+//        if let user = FIRAuth.auth()?.currentUser {
+//            
+//            
+//            name = user.displayName!
+//            email = user.email!
+////            let photoUrl = user.photoURL
+////            let uid = user.uid;
+//            // The user's ID, unique to the Firebase project.
+//            // Do NOT use this value to authenticate with
+//            // your backend server, if you have one. Use
+//            // getTokenWithCompletion:completion: instead.
+////        } else {
+////            // No user is signed in.
+////        }
+//        
+//        
+//    }
+//        
+//        let currentUser = User(username: name, emailAddress: email)
+//        
+//        print(currentUser)
+//        
+//        return currentUser
+//    }
+
 }

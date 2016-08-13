@@ -19,15 +19,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KubazarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YzO-6w-R3l">
-                                <rect key="frame" x="20" y="20" width="560" height="580"/>
+                                <rect key="frame" x="45" y="120" width="510" height="455"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="YzO-6w-R3l" secondAttribute="trailing" id="B7m-4I-gU8"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YzO-6w-R3l" secondAttribute="bottom" id="X6f-uL-4uT"/>
-                            <constraint firstItem="YzO-6w-R3l" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="hnH-5p-6c8"/>
-                            <constraint firstItem="YzO-6w-R3l" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="qs8-8Z-0fx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YzO-6w-R3l" secondAttribute="trailing" constant="25" id="B7m-4I-gU8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YzO-6w-R3l" secondAttribute="bottom" constant="25" id="X6f-uL-4uT"/>
+                            <constraint firstItem="YzO-6w-R3l" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="25" id="hnH-5p-6c8"/>
+                            <constraint firstItem="YzO-6w-R3l" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="qs8-8Z-0fx"/>
                         </constraints>
                     </view>
                 </viewController>

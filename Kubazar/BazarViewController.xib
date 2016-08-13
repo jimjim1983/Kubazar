@@ -7,6 +7,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BazarViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
+                <outlet property="activeTableView" destination="ROE-SG-FjZ" id="elu-gh-036"/>
+                <outlet property="activeView" destination="js3-FK-umV" id="uhA-Sh-A8S"/>
+                <outlet property="completedTableView" destination="h3q-nt-XX3" id="Z5p-Gh-f1g"/>
+                <outlet property="completedView" destination="nJ2-hc-cP7" id="pjQ-zw-0fP"/>
+                <outlet property="navigationBar" destination="RIk-g4-NuX" id="NZe-tY-Yib"/>
+                <outlet property="segmentedControl" destination="bXi-O9-DB2" id="eKw-c6-MgX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,19 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bazar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="in0-bP-vkB">
-                    <rect key="frame" x="262" y="289" width="76" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="76" id="3TA-Kc-ZEX"/>
-                        <constraint firstAttribute="height" constant="21" id="NAi-3Y-Y7J"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RIk-g4-NuX">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
-                    <color key="backgroundColor" red="0.4039215686" green="1" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.35294117650000001" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="66" id="c3K-kJ-rR5"/>
                     </constraints>
@@ -38,15 +34,61 @@
                         <navigationItem title="bazar" id="a6g-1l-5Cf"/>
                     </items>
                 </navigationBar>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bXi-O9-DB2">
+                    <rect key="frame" x="2" y="66" width="596" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="179" id="0O6-ln-gKO"/>
+                        <constraint firstAttribute="height" constant="28" id="Hfy-Vc-38J"/>
+                    </constraints>
+                    <segments>
+                        <segment title="active haikus"/>
+                        <segment title="completed haikus"/>
+                    </segments>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="0O6-ln-gKO"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="segmentedControlIndexChanged:" destination="-1" eventType="valueChanged" id="aOX-rV-NcV"/>
+                    </connections>
+                </segmentedControl>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="js3-FK-umV">
+                    <rect key="frame" x="180" y="125" width="240" height="128"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROE-SG-FjZ">
+                            <rect key="frame" x="-8" y="8" width="240" height="128"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nJ2-hc-cP7">
+                    <rect key="frame" x="172" y="373" width="240" height="128"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h3q-nt-XX3">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.4039215686" green="1" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="RIk-g4-NuX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4mJ-Q3-ePM"/>
-                <constraint firstItem="in0-bP-vkB" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="50r-3S-8AW"/>
-                <constraint firstItem="in0-bP-vkB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9yv-Nm-zwd"/>
+                <constraint firstAttribute="trailing" secondItem="bXi-O9-DB2" secondAttribute="trailing" constant="2" id="JyD-Bv-zBi"/>
+                <constraint firstItem="bXi-O9-DB2" firstAttribute="top" secondItem="RIk-g4-NuX" secondAttribute="bottom" id="dRQ-1b-Mid"/>
                 <constraint firstAttribute="trailing" secondItem="RIk-g4-NuX" secondAttribute="trailing" id="hfn-9a-GLf"/>
                 <constraint firstItem="RIk-g4-NuX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="icB-qe-9kN"/>
+                <constraint firstItem="bXi-O9-DB2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="jhQ-Ac-tLa"/>
+                <constraint firstItem="bXi-O9-DB2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tXD-G2-ms3"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="tXD-G2-ms3"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>
