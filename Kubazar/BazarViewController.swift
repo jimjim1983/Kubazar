@@ -50,7 +50,39 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         ClientService.getCurrentUser { (currentUser) in
             print("hello hello \(currentUser.uid)")
         }
-//        print("hello hello \(ClientService.getCurrentUserUID())")
+
+        
+        let currentUserUID = ClientService.getCurrentUserUID()
+        
+        print("goodbye goodbye \(currentUserUID)")
+        
+        let currentActiveHaikusRef = ClientService.activeHaikusRef.child("\(currentUserUID)")
+        
+        print(currentActiveHaikusRef)
+        
+        currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        
+        if snapshot.value is NSNull {
+            print("this snapshot is null")
+        } else {
+            print("this snapshot exists")
+        }
+        })
+        
+        
+        
+//        
+//        currentActiveHaikusRef.observeEventType(.Value) { snapshot in
+//            if snapshot
+//        }
+        
+//        currentActiveHaikusRef.observeEventType(.Value) { snapshot in
+//            if snapshot.value is NSNull {
+//                print("this snapshot is null")
+//            } else {
+//                print("this path exists")
+//            }
+//        })
         
         activeTableView.dataSource = self
         

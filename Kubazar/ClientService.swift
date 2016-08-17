@@ -33,12 +33,13 @@ struct ClientService {
         
     }
     
-//    static func getCurrentUserUID() -> String {
-//       
-//        let user = FIRAuth.auth()?.currentUser
-//        
-//        return user!.uid
-//    }
+   static func getCurrentUserUID() -> String {
+    
+    let user = FIRAuth.auth()?.currentUser
+    return user!.uid
+    
+  }
+    
 //
 //    static func getCurrentUser() -> User {
 //       

@@ -56,22 +56,34 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="js3-FK-umV">
                     <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROE-SG-FjZ">
-                            <rect key="frame" x="-8" y="8" width="240" height="128"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROE-SG-FjZ">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="ROE-SG-FjZ" firstAttribute="leading" secondItem="js3-FK-umV" secondAttribute="leading" id="HuE-gP-g74"/>
+                        <constraint firstAttribute="bottom" secondItem="ROE-SG-FjZ" secondAttribute="bottom" id="HyQ-77-qcB"/>
+                        <constraint firstAttribute="trailing" secondItem="ROE-SG-FjZ" secondAttribute="trailing" id="KRw-B4-L8V"/>
+                        <constraint firstItem="ROE-SG-FjZ" firstAttribute="top" secondItem="js3-FK-umV" secondAttribute="top" id="N8b-eq-Uu8"/>
+                    </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJ2-hc-cP7">
                     <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h3q-nt-XX3">
-                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h3q-nt-XX3">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" red="0.4039215686" green="1" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="h3q-nt-XX3" secondAttribute="bottom" id="PjH-Sd-Ffw"/>
+                        <constraint firstItem="h3q-nt-XX3" firstAttribute="leading" secondItem="nJ2-hc-cP7" secondAttribute="leading" id="QXU-Wi-7WC"/>
+                        <constraint firstItem="h3q-nt-XX3" firstAttribute="top" secondItem="nJ2-hc-cP7" secondAttribute="top" id="dtu-A0-y4m"/>
+                        <constraint firstAttribute="trailing" secondItem="h3q-nt-XX3" secondAttribute="trailing" id="t6j-zA-dqD"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
