@@ -25,6 +25,7 @@ class InfoViewController: UIViewController {
 
     @IBAction func signOutButtonPressed(sender: AnyObject) {
         try! FIRAuth.auth()!.signOut()
+        print("sign out button pressed")
     }
   
 

@@ -53,8 +53,8 @@
                         <action selector="segmentedControlIndexChanged:" destination="-1" eventType="valueChanged" id="aOX-rV-NcV"/>
                     </connections>
                 </segmentedControl>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="js3-FK-umV">
-                    <rect key="frame" x="180" y="125" width="240" height="128"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="js3-FK-umV">
+                    <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ROE-SG-FjZ">
                             <rect key="frame" x="-8" y="8" width="240" height="128"/>
@@ -63,8 +63,8 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nJ2-hc-cP7">
-                    <rect key="frame" x="172" y="373" width="240" height="128"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJ2-hc-cP7">
+                    <rect key="frame" x="0.0" y="94" width="600" height="506"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h3q-nt-XX3">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -77,11 +77,19 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="RIk-g4-NuX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4mJ-Q3-ePM"/>
+                <constraint firstAttribute="trailing" secondItem="js3-FK-umV" secondAttribute="trailing" id="BvH-Ye-Nsm"/>
+                <constraint firstItem="js3-FK-umV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Cip-JG-eDA"/>
+                <constraint firstAttribute="bottom" secondItem="nJ2-hc-cP7" secondAttribute="bottom" id="ESD-a3-Sui"/>
+                <constraint firstItem="nJ2-hc-cP7" firstAttribute="top" secondItem="bXi-O9-DB2" secondAttribute="bottom" id="Fbo-oZ-Oye"/>
                 <constraint firstAttribute="trailing" secondItem="bXi-O9-DB2" secondAttribute="trailing" constant="2" id="JyD-Bv-zBi"/>
+                <constraint firstItem="js3-FK-umV" firstAttribute="top" secondItem="bXi-O9-DB2" secondAttribute="bottom" id="Tqc-NO-v70"/>
+                <constraint firstAttribute="bottom" secondItem="js3-FK-umV" secondAttribute="bottom" id="Uh8-cD-CER"/>
+                <constraint firstItem="nJ2-hc-cP7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aCO-US-nXY"/>
                 <constraint firstItem="bXi-O9-DB2" firstAttribute="top" secondItem="RIk-g4-NuX" secondAttribute="bottom" id="dRQ-1b-Mid"/>
                 <constraint firstAttribute="trailing" secondItem="RIk-g4-NuX" secondAttribute="trailing" id="hfn-9a-GLf"/>
                 <constraint firstItem="RIk-g4-NuX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="icB-qe-9kN"/>
                 <constraint firstItem="bXi-O9-DB2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="jhQ-Ac-tLa"/>
+                <constraint firstAttribute="trailing" secondItem="nJ2-hc-cP7" secondAttribute="trailing" id="rva-kN-x9J"/>
                 <constraint firstItem="bXi-O9-DB2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="tXD-G2-ms3"/>
             </constraints>
             <variation key="default">

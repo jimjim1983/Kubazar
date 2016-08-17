@@ -91,13 +91,22 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                    
                     if let currentUser = user?.uid {
                     self.createNewUserProfile(currentUser)
+                        
+                        NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(SignupViewController.changeRootViewToTabBarController), userInfo: nil, repeats: false)
+
                 }
                 }
             })
             
         }
     }
-        
+    
+    func changeRootViewToTabBarController() {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    appDelegate.window?.rootViewController = appDelegate.tabBarController
+    appDelegate.tabBarController?.selectedIndex = 0
+    
+    }
    
     func createNewUserProfile(uid: String) {
         

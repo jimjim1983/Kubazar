@@ -39,7 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let controllers = [firstTab, secondTab, thirdTab, fourthTab]
         tabBarController?.viewControllers = controllers
         
-        //firstTab.tabBarItem =
+        firstTab.tabBarItem = UITabBarItem(title: "Bazar", image: UIImage(named: "bazarA"), selectedImage: UIImage(named: "bazarB"))
+        
+        secondTab.tabBarItem = UITabBarItem(title: "Start", image: UIImage(named: "startA"), selectedImage: UIImage(named: "startB"))
+        
+        thirdTab.tabBarItem = UITabBarItem(title: "Friends", image: UIImage(named: "friendsA"), selectedImage: UIImage(named: "friendsB"))
+        
+        fourthTab.tabBarItem = UITabBarItem(title: "Info", image: UIImage(named: "infoA"), selectedImage: UIImage(named: "infoB"))
     
         if let user = FIRAuth.auth()?.currentUser {
             print("App Delegate says user is signed in with uid:", user.uid)
@@ -52,18 +58,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = welcomeVC
         }
         
-        
-        FIRAuth.auth()!.addAuthStateDidChangeListener() { (auth, user) in
-            if let user = user {
-                print("Auth State Changed: User is signed in with uid:", user.uid)
-                self.window?.rootViewController = self.tabBarController
-                self.tabBarController?.selectedIndex = 0
-            } else {
-                print("Auth State Changed: No user is signed in.")
-                let welcomeVC = WelcomeViewController()
-                self.window?.rootViewController = welcomeVC
-            }
-        }
+//        
+//        FIRAuth.auth()!.addAuthStateDidChangeListener() { (auth, user) in
+//            if let user = user {
+//                print("Auth State Changed: User is signed in with uid:", user.uid)
+////                self.window?.rootViewController = self.tabBarController
+////                self.tabBarController?.selectedIndex = 0
+//            } else {
+//                print("Auth State Changed: No user is signed in.")
+//                let welcomeVC = WelcomeViewController()
+//                self.window?.rootViewController = welcomeVC
+//            }
+//        }
         
 
         
