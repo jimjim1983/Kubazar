@@ -18,4 +18,17 @@ struct Alerts {
         alert.addAction(dismissAction)
         return alert
     }
+    
+//    static func showStartHaikuMesssage(anyMessage: String) -> UIAlertController {
+//    let alert = UIAlertController(title: nil, message: anyMessage, preferredStyle: .ActionSheet)
+//       let startAction = UIAlertAction(title: "Start", style: .Default) { (action) in
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+////        appDelegate.window?.rootViewController = appDelegate.tabBarController
+//        appDelegate.tabBarController?.selectedIndex = 2
+//        }
+//        alert.addAction(startAction)
+//        return alert
+//    }
+    
+
 }

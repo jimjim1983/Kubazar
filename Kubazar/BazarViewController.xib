@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BazarViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
+                <outlet property="activeStartView" destination="cmP-43-EC0" id="ObK-Q7-Mmg"/>
                 <outlet property="activeTableView" destination="ROE-SG-FjZ" id="elu-gh-036"/>
                 <outlet property="activeView" destination="js3-FK-umV" id="uhA-Sh-A8S"/>
                 <outlet property="completedTableView" destination="h3q-nt-XX3" id="Z5p-Gh-f1g"/>
@@ -60,6 +61,30 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="506"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmP-43-EC0" userLabel="ActiveStartView">
+                            <rect key="frame" x="100" y="53" width="400" height="400"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhu-9A-N5G">
+                                    <rect key="frame" x="0.0" y="185" width="400" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="MHv-Ew-5Pk"/>
+                                    </constraints>
+                                    <state key="normal" title="Start a haiku! "/>
+                                    <connections>
+                                        <action selector="startHaikuButton:" destination="-1" eventType="touchUpInside" id="tMd-ah-W4g"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="400" id="ChG-ee-lCc"/>
+                                <constraint firstItem="zhu-9A-N5G" firstAttribute="leading" secondItem="cmP-43-EC0" secondAttribute="leading" id="F8q-Vy-N0K"/>
+                                <constraint firstItem="zhu-9A-N5G" firstAttribute="centerX" secondItem="cmP-43-EC0" secondAttribute="centerX" id="LQk-Ko-qfj"/>
+                                <constraint firstItem="zhu-9A-N5G" firstAttribute="centerY" secondItem="cmP-43-EC0" secondAttribute="centerY" id="SUn-hm-0Zg"/>
+                                <constraint firstAttribute="height" constant="400" id="Xhc-Qa-SI0"/>
+                                <constraint firstAttribute="trailing" secondItem="zhu-9A-N5G" secondAttribute="trailing" id="hFZ-Cv-GBy"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -67,6 +92,8 @@
                         <constraint firstAttribute="bottom" secondItem="ROE-SG-FjZ" secondAttribute="bottom" id="HyQ-77-qcB"/>
                         <constraint firstAttribute="trailing" secondItem="ROE-SG-FjZ" secondAttribute="trailing" id="KRw-B4-L8V"/>
                         <constraint firstItem="ROE-SG-FjZ" firstAttribute="top" secondItem="js3-FK-umV" secondAttribute="top" id="N8b-eq-Uu8"/>
+                        <constraint firstItem="cmP-43-EC0" firstAttribute="centerX" secondItem="js3-FK-umV" secondAttribute="centerX" id="hhc-MT-bZv"/>
+                        <constraint firstItem="cmP-43-EC0" firstAttribute="centerY" secondItem="js3-FK-umV" secondAttribute="centerY" id="tfD-fg-Ti7"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJ2-hc-cP7">

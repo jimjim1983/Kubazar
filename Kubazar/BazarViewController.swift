@@ -10,6 +10,8 @@ import UIKit
 
 class BazarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var activeStartView: UIView!
+    
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     
@@ -42,6 +44,9 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         PreviewDetail(title: "More", preferredHeight: 0.0) // 0.0 to get the default height.
     ]
     
+    let currentUserUID = ClientService.getCurrentUserUID()
+    
+    let currentActiveHaikusRef = ClientService.activeHaikusRef.child("\(ClientService.getCurrentUserUID())")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,22 +57,14 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
 
         
-        let currentUserUID = ClientService.getCurrentUserUID()
+        
         
         print("goodbye goodbye \(currentUserUID)")
         
-        let currentActiveHaikusRef = ClientService.activeHaikusRef.child("\(currentUserUID)")
+     
         
-        print(currentActiveHaikusRef)
+        //code in Bazar to check if activeHaikus for current user exists.
         
-        currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-        
-        if snapshot.value is NSNull {
-            print("this snapshot is null")
-        } else {
-            print("this snapshot exists")
-        }
-        })
         
         
         
@@ -101,10 +98,14 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         
 // if activeHaikus || completedHaikus path does not contain current user UID string path, then { activeView and completedView alphas are set to 0 and 
         
-        self.segmentedControl.selectedSegmentIndex = 0
-        activeView.alpha = 1
-        completedView.alpha = 0
+       
         
+        
+    }
+    
+    
+    @IBAction func startHaikuButton(sender: AnyObject) {
+        startHaiku()
     }
 
    
@@ -112,8 +113,38 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             // show active
-            activeView.alpha = 1
-            completedView.alpha = 0
+            
+            print(currentActiveHaikusRef)
+            
+            currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                
+                if snapshot.value is NSNull {
+                   
+                    
+                    // put an alert or something?
+                    
+                    print("You have no active haikus. Start a haiku!")
+                    
+                 
+                    
+                    self.segmentedControl.selectedSegmentIndex = 0
+                    self.activeView.alpha = 0
+                    self.completedView.alpha = 0
+                    self.activeStartView.alpha = 1
+                    
+                } else {
+                    print("this snapshot exists")
+                    self.segmentedControl.selectedSegmentIndex = 0
+                    self.activeView.alpha = 1
+                    self.completedView.alpha = 0
+                      self.activeStartView.alpha = 0
+                }
+            })
+
+            
+//            
+//            activeView.alpha = 1
+//            completedView.alpha = 0
         case 1:
             //show Completed
             completedView.alpha = 1
@@ -123,6 +154,11 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
             break
         }
     
+    }
+    
+    func startHaiku() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.tabBarController?.selectedIndex = 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -160,5 +196,7 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("did select: \(indexPath.row)")
     }
+    
+    
     
 }
