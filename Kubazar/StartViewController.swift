@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var twoFriendsButton: UIButton!
     
@@ -27,6 +27,9 @@ class StartViewController: UIViewController {
     @IBOutlet weak var congratsView: UIView!
     // congratsView should take you to active bazar table view
     // table view selection goes to detail view that includes share button?
+    
+    
+    @IBOutlet weak var haikuImageView: UIImageView!
     
     
     override func viewDidLoad() {
@@ -83,6 +86,10 @@ class StartViewController: UIViewController {
         congratsView.alpha = 1
     }
     
+    @IBAction func continueButtonPressed(sender: AnyObject) {
+        stepThreeChoosePicture()
+    }
+    
     @IBAction func startOverButtonPressed(sender: AnyObject) {
         stepOneCreateNewHaiku()
     }
@@ -100,6 +107,35 @@ class StartViewController: UIViewController {
         chooseFriendsLabel.text = "Choose two friends!"
         stepTwoChooseFriends()
         
+    }
+    
+    @IBAction func cameraButtonPressed(sender: AnyObject) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.allowsEditing = false
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func cameraRollButtonPressed(sender: AnyObject) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        haikuImageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil);
+        stepFourEnterHaiku()
     }
 
 
