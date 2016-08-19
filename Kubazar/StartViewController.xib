@@ -7,13 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
-                <outlet property="chooseFriendsView" destination="ib5-H7-ToO" id="3rp-rk-LC1"/>
-                <outlet property="choosePictureView" destination="jvM-g8-q5X" id="lJ2-pW-3Yq"/>
+                <outlet property="chooseFriendsLabel" destination="gQE-rM-IC0" id="wKW-up-Fzo"/>
+                <outlet property="chooseFriendsView" destination="jvM-g8-q5X" id="sxk-MF-g2k"/>
+                <outlet property="choosePictureView" destination="ib5-H7-ToO" id="lAo-TH-DGA"/>
                 <outlet property="congratsView" destination="B1d-9K-4Wm" id="bSN-TV-KAv"/>
                 <outlet property="createNewHaikuView" destination="QVS-bh-A8E" id="IYQ-lK-ngP"/>
                 <outlet property="enterHaikuView" destination="Lr9-WP-kWT" id="h3g-ho-HZk"/>
                 <outlet property="threeFriendsButton" destination="TXm-gE-9tm" id="t83-Gy-boB"/>
-                <outlet property="threeFriendsButtonPressed" destination="TXm-gE-9tm" id="EZZ-C4-wgB"/>
                 <outlet property="twoFriendsButton" destination="OLT-wt-mXm" id="raH-ye-xgT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -44,11 +44,7 @@
                     <rect key="frame" x="0.0" y="66" width="600" height="534"/>
                     <color key="backgroundColor" red="0.065105695089999999" green="0.2095483115" blue="0.67285840939999997" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-g8-q5X" userLabel="ViewThree">
-                    <rect key="frame" x="0.0" y="66" width="600" height="534"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVS-bh-A8E" userLabel="ViewOne">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVS-bh-A8E" userLabel="Create New Haiku View">
                     <rect key="frame" x="0.0" y="66" width="600" height="534"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KubazarMascot" translatesAutoresizingMaskIntoConstraints="NO" id="xju-HC-Pdo">
@@ -103,6 +99,9 @@
                                 <constraint firstAttribute="width" constant="74" id="Q9L-6g-WbO"/>
                             </constraints>
                             <state key="normal" title="3 friends"/>
+                            <connections>
+                                <action selector="threeFriendsButtonPressed:" destination="-1" eventType="touchUpInside" id="hWy-ps-8PV"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -121,7 +120,7 @@
                         <constraint firstItem="xju-HC-Pdo" firstAttribute="centerX" secondItem="QVS-bh-A8E" secondAttribute="centerX" id="ue5-sx-4QL"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib5-H7-ToO" userLabel="ViewTwo">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib5-H7-ToO" userLabel="Choose Picture View">
                     <rect key="frame" x="0.0" y="66" width="600" height="534"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHm-aE-XI5">
@@ -170,6 +169,46 @@
                         <constraint firstItem="P5p-g5-kwW" firstAttribute="top" secondItem="IqM-0a-Oz7" secondAttribute="bottom" constant="37" id="mB1-P4-pjx"/>
                         <constraint firstItem="IqM-0a-Oz7" firstAttribute="top" secondItem="RHm-aE-XI5" secondAttribute="bottom" constant="63" id="vNq-jz-b3D"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvM-g8-q5X" userLabel="Choose Friends View">
+                    <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQE-rM-IC0">
+                            <rect key="frame" x="0.0" y="15" width="600" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="krs-Jg-Bfd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x5W-UP-O1Y">
+                            <rect key="frame" x="214" y="66" width="172" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="3Kl-Pk-dAN"/>
+                                <constraint firstAttribute="width" constant="172" id="tbc-4n-Ead"/>
+                            </constraints>
+                            <state key="normal" title="or start over!"/>
+                            <connections>
+                                <action selector="startOverButtonPressed:" destination="-1" eventType="touchUpInside" id="LKc-Sh-1Nm"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="x5W-UP-O1Y" firstAttribute="centerX" secondItem="jvM-g8-q5X" secondAttribute="centerX" id="Yzq-kB-kaX"/>
+                        <constraint firstItem="x5W-UP-O1Y" firstAttribute="top" secondItem="gQE-rM-IC0" secondAttribute="bottom" constant="30" id="h7g-eP-A52"/>
+                        <constraint firstAttribute="trailing" secondItem="gQE-rM-IC0" secondAttribute="trailing" id="kJP-GF-mjm"/>
+                        <constraint firstItem="gQE-rM-IC0" firstAttribute="centerX" secondItem="jvM-g8-q5X" secondAttribute="centerX" id="mtU-bH-lXE"/>
+                        <constraint firstItem="gQE-rM-IC0" firstAttribute="leading" secondItem="jvM-g8-q5X" secondAttribute="leading" id="oYa-Bg-w8B"/>
+                        <constraint firstAttribute="bottom" secondItem="x5W-UP-O1Y" secondAttribute="bottom" constant="28" id="pHw-Nh-Pbv"/>
+                        <constraint firstItem="gQE-rM-IC0" firstAttribute="top" secondItem="jvM-g8-q5X" secondAttribute="top" constant="15" id="vXG-1l-bwf"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="pHw-Nh-Pbv"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <constraints>
