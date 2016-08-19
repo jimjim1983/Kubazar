@@ -12,9 +12,7 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     @IBOutlet weak var activeStartView: UIView!
     
-    
     @IBOutlet weak var navigationBar: UINavigationBar!
-    
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
@@ -48,38 +46,15 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     let currentActiveHaikusRef = ClientService.activeHaikusRef.child("\(ClientService.getCurrentUserUID())")
     
+    let completedHaikusRef = ClientService.completedHaikusRef.child("\(ClientService.getCurrentUserUID())")
+    
+    @IBOutlet weak var startHaikuLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        ClientService.getCurrentUser { (currentUser) in
-            print("hello hello \(currentUser.uid)")
-        }
-
-        
-        
-        
-        print("goodbye goodbye \(currentUserUID)")
-        
-     
-        
-        //code in Bazar to check if activeHaikus for current user exists.
-        
-        
-        
-        
-//        
-//        currentActiveHaikusRef.observeEventType(.Value) { snapshot in
-//            if snapshot
-//        }
-        
-//        currentActiveHaikusRef.observeEventType(.Value) { snapshot in
-//            if snapshot.value is NSNull {
-//                print("this snapshot is null")
-//            } else {
-//                print("this path exists")
-//            }
-//        })
+        self.segmentedControl.selectedSegmentIndex = 0
         
         activeTableView.dataSource = self
         
@@ -94,13 +69,6 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let completedNib = UINib.init(nibName: "CompletedHaikusTableViewCell", bundle: nil)
         self.completedTableView.registerNib(completedNib, forCellReuseIdentifier: "completedCell")
-
-        
-// if activeHaikus || completedHaikus path does not contain current user UID string path, then { activeView and completedView alphas are set to 0 and 
-        
-       
-        
-        
     }
     
     
@@ -108,47 +76,81 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         startHaiku()
     }
 
+    
+    override func viewWillAppear(animated: Bool) {
+        currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            if snapshot.value is NSNull {
+                
+                print("You have no active haikus. Start a haiku!")
+                
+                self.activeView.alpha = 0
+                self.completedView.alpha = 0
+                self.activeStartView.alpha = 1
+                self.startHaikuLabel.text = "You have no active haikus."
+                
+                
+            } else {
+                print("this snapshot exists")
+                
+                self.activeView.alpha = 1
+                self.completedView.alpha = 0
+                self.activeStartView.alpha = 0
+            }
+        })
+    }
    
     @IBAction func segmentedControlIndexChanged(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            // show active
             
-            print(currentActiveHaikusRef)
+            //show active haikus
             
             currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
                 
                 if snapshot.value is NSNull {
-                   
-                    
-                    // put an alert or something?
                     
                     print("You have no active haikus. Start a haiku!")
-                    
-                 
-                    
-                    self.segmentedControl.selectedSegmentIndex = 0
+                
                     self.activeView.alpha = 0
                     self.completedView.alpha = 0
                     self.activeStartView.alpha = 1
+                    self.startHaikuLabel.text = "You have no active haikus."
+                    
                     
                 } else {
                     print("this snapshot exists")
-                    self.segmentedControl.selectedSegmentIndex = 0
+
                     self.activeView.alpha = 1
                     self.completedView.alpha = 0
-                      self.activeStartView.alpha = 0
+                    self.activeStartView.alpha = 0
                 }
             })
 
-            
-//            
-//            activeView.alpha = 1
-//            completedView.alpha = 0
         case 1:
-            //show Completed
-            completedView.alpha = 1
-            activeView.alpha = 0
+           
+            //show completed haikus
+            
+            completedHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                
+                if snapshot.value is NSNull {
+                    
+                    print("You have no completed haikus. Start a haiku!")
+                    
+                    self.activeView.alpha = 0
+                    self.completedView.alpha = 0
+                    self.activeStartView.alpha = 1
+                    self.startHaikuLabel.text = "You have no completed haikus."
+                    
+                } else {
+                    print("this snapshot exists")
+
+                    self.activeView.alpha = 0
+                    self.completedView.alpha = 1
+                    self.activeStartView.alpha = 0
+                }
+            })
+
         default:
             
             break
@@ -158,7 +160,7 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func startHaiku() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.tabBarController?.selectedIndex = 2
+        appDelegate.tabBarController?.selectedIndex = 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

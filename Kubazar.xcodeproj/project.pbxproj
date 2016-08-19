@@ -165,26 +165,12 @@
 		A67786691D086EEE0057581D /* Kubazar */ = {
 			isa = PBXGroup;
 			children = (
+				F2D2DE4A1D6707EF0085B947 /* View Controllers */,
+				F2D2DE4B1D67087E0085B947 /* Table View Cells */,
 				F27718281D41E0B100EBB668 /* User.swift */,
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
 				F27718241D40711000EBB668 /* ClientService.swift */,
-				F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */,
-				F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */,
-				F2C1A9F61D36D7960063089F /* BazarViewController.swift */,
-				F2C1A9F71D36D7960063089F /* BazarViewController.xib */,
-				F2BF11901D57B1C300788E1D /* ActiveHaikusTableViewCell.swift */,
-				F2BF11911D57B1C300788E1D /* ActiveHaikusTableViewCell.xib */,
-				F2BF11941D57B1D200788E1D /* CompletedHaikusTableViewCell.swift */,
-				F2BF11951D57B1D200788E1D /* CompletedHaikusTableViewCell.xib */,
-				F2C1A9FA1D36D7A60063089F /* StartViewController.swift */,
-				F2C1A9FB1D36D7A60063089F /* StartViewController.xib */,
-				F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */,
-				F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */,
 				F27718261D41CC7800EBB668 /* Alerts.swift */,
-				F2C1AA021D36D7C90063089F /* InfoViewController.swift */,
-				F2C1AA031D36D7C90063089F /* InfoViewController.xib */,
-				F2C1A9F21D36C0C30063089F /* SignupViewController.swift */,
-				F2C1A9F31D36C0C30063089F /* SignupViewController.xib */,
 				A677866C1D086EEE0057581D /* Assets.xcassets */,
 				A677866E1D086EEE0057581D /* LaunchScreen.storyboard */,
 				A67786711D086EEE0057581D /* Info.plist */,
@@ -254,6 +240,36 @@
 				F252A5D81D14EA6200CBDFD2 /* StartGameViewController.xib */,
 			);
 			name = Facebook;
+			sourceTree = "<group>";
+		};
+		F2D2DE4A1D6707EF0085B947 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2C1A9F21D36C0C30063089F /* SignupViewController.swift */,
+				F2C1A9F31D36C0C30063089F /* SignupViewController.xib */,
+				F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */,
+				F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */,
+				F2C1A9F61D36D7960063089F /* BazarViewController.swift */,
+				F2C1A9F71D36D7960063089F /* BazarViewController.xib */,
+				F2C1A9FA1D36D7A60063089F /* StartViewController.swift */,
+				F2C1A9FB1D36D7A60063089F /* StartViewController.xib */,
+				F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */,
+				F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */,
+				F2C1AA021D36D7C90063089F /* InfoViewController.swift */,
+				F2C1AA031D36D7C90063089F /* InfoViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F2D2DE4B1D67087E0085B947 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F2BF11901D57B1C300788E1D /* ActiveHaikusTableViewCell.swift */,
+				F2BF11911D57B1C300788E1D /* ActiveHaikusTableViewCell.xib */,
+				F2BF11941D57B1D200788E1D /* CompletedHaikusTableViewCell.swift */,
+				F2BF11951D57B1D200788E1D /* CompletedHaikusTableViewCell.xib */,
+			);
+			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
