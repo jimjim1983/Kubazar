@@ -40,6 +40,10 @@
 		F2C1AA011D36D7B80063089F /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */; };
 		F2C1AA041D36D7C90063089F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C1AA021D36D7C90063089F /* InfoViewController.swift */; };
 		F2C1AA051D36D7C90063089F /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2C1AA031D36D7C90063089F /* InfoViewController.xib */; };
+		F2D2DE4E1D6729DB0085B947 /* ActiveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2DE4C1D6729DB0085B947 /* ActiveDetailViewController.swift */; };
+		F2D2DE4F1D6729DB0085B947 /* ActiveDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D2DE4D1D6729DB0085B947 /* ActiveDetailViewController.xib */; };
+		F2D2DE521D6729F00085B947 /* CompletedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D2DE501D6729F00085B947 /* CompletedDetailViewController.swift */; };
+		F2D2DE531D6729F00085B947 /* CompletedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2D2DE511D6729F00085B947 /* CompletedDetailViewController.xib */; };
 		F30DD226863A58B9A6B7772E /* Pods_KubazarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C622D14510274C6504EBC6 /* Pods_KubazarTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +110,10 @@
 		F2C1A9FF1D36D7B80063089F /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
 		F2C1AA021D36D7C90063089F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		F2C1AA031D36D7C90063089F /* InfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoViewController.xib; sourceTree = "<group>"; };
+		F2D2DE4C1D6729DB0085B947 /* ActiveDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveDetailViewController.swift; sourceTree = "<group>"; };
+		F2D2DE4D1D6729DB0085B947 /* ActiveDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActiveDetailViewController.xib; sourceTree = "<group>"; };
+		F2D2DE501D6729F00085B947 /* CompletedDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedDetailViewController.swift; sourceTree = "<group>"; };
+		F2D2DE511D6729F00085B947 /* CompletedDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletedDetailViewController.xib; sourceTree = "<group>"; };
 		FEAE5C54F8EDCB59DF8E46CB /* Pods-KubazarUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KubazarUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KubazarUITests/Pods-KubazarUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,6 +259,10 @@
 				F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */,
 				F2C1A9F61D36D7960063089F /* BazarViewController.swift */,
 				F2C1A9F71D36D7960063089F /* BazarViewController.xib */,
+				F2D2DE4C1D6729DB0085B947 /* ActiveDetailViewController.swift */,
+				F2D2DE4D1D6729DB0085B947 /* ActiveDetailViewController.xib */,
+				F2D2DE501D6729F00085B947 /* CompletedDetailViewController.swift */,
+				F2D2DE511D6729F00085B947 /* CompletedDetailViewController.xib */,
 				F2C1A9FA1D36D7A60063089F /* StartViewController.swift */,
 				F2C1A9FB1D36D7A60063089F /* StartViewController.xib */,
 				F2C1A9FE1D36D7B80063089F /* FriendsViewController.swift */,
@@ -390,10 +402,12 @@
 				F252A5DA1D14EA6200CBDFD2 /* StartGameViewController.xib in Resources */,
 				A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */,
 				F2BF11931D57B1C300788E1D /* ActiveHaikusTableViewCell.xib in Resources */,
+				F2D2DE4F1D6729DB0085B947 /* ActiveDetailViewController.xib in Resources */,
 				F2C1A9F51D36C0C30063089F /* SignupViewController.xib in Resources */,
 				F2C1A9FD1D36D7A60063089F /* StartViewController.xib in Resources */,
 				F2C1A9F91D36D7960063089F /* BazarViewController.xib in Resources */,
 				F2C1A9ED1D36AA960063089F /* WelcomeViewController.xib in Resources */,
+				F2D2DE531D6729F00085B947 /* CompletedDetailViewController.xib in Resources */,
 				F2C1AA051D36D7C90063089F /* InfoViewController.xib in Resources */,
 				F2C1AA011D36D7B80063089F /* FriendsViewController.xib in Resources */,
 			);
@@ -548,9 +562,11 @@
 				F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */,
 				F2C1A9FC1D36D7A60063089F /* StartViewController.swift in Sources */,
 				F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */,
+				F2D2DE521D6729F00085B947 /* CompletedDetailViewController.swift in Sources */,
 				F27718251D40711000EBB668 /* ClientService.swift in Sources */,
 				F2BF11961D57B1D200788E1D /* CompletedHaikusTableViewCell.swift in Sources */,
 				F2C1AA041D36D7C90063089F /* InfoViewController.swift in Sources */,
+				F2D2DE4E1D6729DB0085B947 /* ActiveDetailViewController.swift in Sources */,
 				F252A5D11D13052000CBDFD2 /* FacebookLoginViewController.swift in Sources */,
 				A677866B1D086EEE0057581D /* AppDelegate.swift in Sources */,
 				F27718291D41E0B100EBB668 /* User.swift in Sources */,

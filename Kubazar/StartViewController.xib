@@ -7,6 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StartViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
+                <outlet property="chooseFriendsView" destination="ib5-H7-ToO" id="3rp-rk-LC1"/>
+                <outlet property="choosePictureView" destination="jvM-g8-q5X" id="lJ2-pW-3Yq"/>
+                <outlet property="congratsView" destination="B1d-9K-4Wm" id="bSN-TV-KAv"/>
+                <outlet property="createNewHaikuView" destination="QVS-bh-A8E" id="IYQ-lK-ngP"/>
+                <outlet property="enterHaikuView" destination="Lr9-WP-kWT" id="h3g-ho-HZk"/>
+                <outlet property="threeFriendsButton" destination="TXm-gE-9tm" id="t83-Gy-boB"/>
+                <outlet property="threeFriendsButtonPressed" destination="TXm-gE-9tm" id="EZZ-C4-wgB"/>
+                <outlet property="twoFriendsButton" destination="OLT-wt-mXm" id="raH-ye-xgT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,13 +48,128 @@
                     <rect key="frame" x="0.0" y="66" width="600" height="534"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib5-H7-ToO" userLabel="ViewTwo">
-                    <rect key="frame" x="0.0" y="66" width="600" height="534"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVS-bh-A8E" userLabel="ViewOne">
                     <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KubazarMascot" translatesAutoresizingMaskIntoConstraints="NO" id="xju-HC-Pdo">
+                            <rect key="frame" x="174" y="0.0" width="252" height="323"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="252" id="rdl-Nh-5xo"/>
+                                <constraint firstAttribute="height" constant="323" id="tJa-ng-9gL"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new haiku" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ii3-DJ-djh">
+                            <rect key="frame" x="157" y="339" width="286" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="aE7-zI-na0"/>
+                                <constraint firstAttribute="width" constant="286" id="q7G-3A-SQQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(you have three days together!)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g8-kh-JO5">
+                            <rect key="frame" x="178" y="368" width="244" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="244" id="gpq-TZ-NtQ"/>
+                                <constraint firstAttribute="height" constant="21" id="izB-5P-SiZ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLT-wt-mXm">
+                            <rect key="frame" x="188" y="397" width="72" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="o33-La-xTP"/>
+                                <constraint firstAttribute="width" constant="72" id="qRJ-cc-lxy"/>
+                            </constraints>
+                            <state key="normal" title="2 friends"/>
+                            <connections>
+                                <action selector="twoFriendsButtonPressed:" destination="-1" eventType="touchUpInside" id="Vgi-9T-rIP"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyD-Vq-LXl">
+                            <rect key="frame" x="275" y="397" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="nFH-O3-Vd0"/>
+                                <constraint firstAttribute="width" constant="50" id="voJ-Od-gBl"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXm-gE-9tm">
+                            <rect key="frame" x="341" y="397" width="74" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="0fS-Bh-7Qt"/>
+                                <constraint firstAttribute="width" constant="74" id="Q9L-6g-WbO"/>
+                            </constraints>
+                            <state key="normal" title="3 friends"/>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="OLT-wt-mXm" firstAttribute="top" secondItem="4g8-kh-JO5" secondAttribute="bottom" constant="8" id="3ae-4h-bkV"/>
+                        <constraint firstItem="4g8-kh-JO5" firstAttribute="centerX" secondItem="QVS-bh-A8E" secondAttribute="centerX" id="CNe-rI-bVg"/>
+                        <constraint firstItem="ii3-DJ-djh" firstAttribute="top" secondItem="xju-HC-Pdo" secondAttribute="bottom" constant="16" id="Gld-Xw-W2M"/>
+                        <constraint firstItem="4g8-kh-JO5" firstAttribute="top" secondItem="ii3-DJ-djh" secondAttribute="bottom" constant="8" id="MG9-tm-F1X"/>
+                        <constraint firstItem="TXm-gE-9tm" firstAttribute="top" secondItem="4g8-kh-JO5" secondAttribute="bottom" constant="8" id="QOV-s6-7GG"/>
+                        <constraint firstItem="QyD-Vq-LXl" firstAttribute="top" secondItem="4g8-kh-JO5" secondAttribute="bottom" constant="8" id="R48-hY-ng8"/>
+                        <constraint firstItem="ii3-DJ-djh" firstAttribute="centerX" secondItem="QVS-bh-A8E" secondAttribute="centerX" id="Rsv-bw-WRD"/>
+                        <constraint firstItem="QyD-Vq-LXl" firstAttribute="leading" secondItem="OLT-wt-mXm" secondAttribute="trailing" constant="15.5" id="YW3-aJ-tiZ"/>
+                        <constraint firstItem="QyD-Vq-LXl" firstAttribute="centerX" secondItem="QVS-bh-A8E" secondAttribute="centerX" id="a1f-zw-Iub"/>
+                        <constraint firstItem="TXm-gE-9tm" firstAttribute="leading" secondItem="QyD-Vq-LXl" secondAttribute="trailing" constant="15.5" id="kkZ-yf-gv9"/>
+                        <constraint firstItem="xju-HC-Pdo" firstAttribute="top" secondItem="QVS-bh-A8E" secondAttribute="top" id="rbE-S3-5sK"/>
+                        <constraint firstItem="xju-HC-Pdo" firstAttribute="centerX" secondItem="QVS-bh-A8E" secondAttribute="centerX" id="ue5-sx-4QL"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib5-H7-ToO" userLabel="ViewTwo">
+                    <rect key="frame" x="0.0" y="66" width="600" height="534"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a picture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHm-aE-XI5">
+                            <rect key="frame" x="211" y="23" width="177" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="2UI-Jn-rmQ"/>
+                                <constraint firstAttribute="width" constant="177" id="wDj-CS-K22"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IqM-0a-Oz7">
+                            <rect key="frame" x="245" y="107" width="111.5" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="ZaU-Cr-N2L"/>
+                                <constraint firstAttribute="width" constant="111.5" id="lGk-w2-xXY"/>
+                            </constraints>
+                            <state key="normal" title="camera button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5p-g5-kwW">
+                            <rect key="frame" x="175" y="174" width="250" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Vau-Qj-u5s"/>
+                                <constraint firstAttribute="width" constant="250" id="gNq-Qd-ilN"/>
+                            </constraints>
+                            <state key="normal" title="choose picture from camera roll"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yui-BX-bQO">
+                            <rect key="frame" x="205" y="252" width="190" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="1lC-bI-mXX"/>
+                                <constraint firstAttribute="width" constant="190" id="71A-Cd-QdU"/>
+                            </constraints>
+                            <state key="normal" title="inspire me!"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="yui-BX-bQO" firstAttribute="top" secondItem="P5p-g5-kwW" secondAttribute="bottom" constant="48" id="Ea3-5G-urj"/>
+                        <constraint firstItem="IqM-0a-Oz7" firstAttribute="centerX" secondItem="ib5-H7-ToO" secondAttribute="centerX" id="H3Y-1q-9Q4"/>
+                        <constraint firstItem="yui-BX-bQO" firstAttribute="centerX" secondItem="ib5-H7-ToO" secondAttribute="centerX" id="P9l-MZ-SkC"/>
+                        <constraint firstItem="RHm-aE-XI5" firstAttribute="centerX" secondItem="ib5-H7-ToO" secondAttribute="centerX" id="RTv-K1-xAW"/>
+                        <constraint firstItem="P5p-g5-kwW" firstAttribute="centerX" secondItem="ib5-H7-ToO" secondAttribute="centerX" id="cbT-1R-OW8"/>
+                        <constraint firstItem="RHm-aE-XI5" firstAttribute="top" secondItem="ib5-H7-ToO" secondAttribute="top" constant="23" id="f8l-to-EI0"/>
+                        <constraint firstItem="P5p-g5-kwW" firstAttribute="top" secondItem="IqM-0a-Oz7" secondAttribute="bottom" constant="37" id="mB1-P4-pjx"/>
+                        <constraint firstItem="IqM-0a-Oz7" firstAttribute="top" secondItem="RHm-aE-XI5" secondAttribute="bottom" constant="63" id="vNq-jz-b3D"/>
+                    </constraints>
                 </view>
             </subviews>
             <constraints>
@@ -77,4 +200,7 @@
             <point key="canvasLocation" x="191" y="22"/>
         </view>
     </objects>
+    <resources>
+        <image name="KubazarMascot" width="968" height="1463"/>
+    </resources>
 </document>

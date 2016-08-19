@@ -9,7 +9,24 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    
+    @IBOutlet weak var twoFriendsButton: UIButton!
+    
+    @IBOutlet weak var threeFriendsButton: UIButton!
+    
+    @IBOutlet weak var createNewHaikuView: UIView!
+    
+    @IBOutlet weak var chooseFriendsView: UIView!
 
+    @IBOutlet weak var choosePictureView: UIView!
+    
+    @IBOutlet weak var enterHaikuView: UIView!
+    
+    @IBOutlet weak var congratsView: UIView!
+    // congratsView should take you to active bazar table view
+    // table view selection goes to detail view that includes share button?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,40 +38,15 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func twoFriendsButtonPressed(sender: AnyObject) {
+        
+        
+    }
+    
+    
+    @IBOutlet weak var threeFriendsButtonPressed: UIButton!
+    
 
-    /*
- save view as image with this extension?
-     
-     extension UIImage {
-     convenience init(view: UIView) {
-     UIGraphicsBeginImageContext(view.frame.size)
-     view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-     let image = UIGraphicsGetImageFromCurrentImageContext()
-     UIGraphicsEndImageContext()
-     self.init(CGImage: image.CGImage!)
-     }
-     }
 
-another option, just not written as an extension:
-     
-     func screenShotMethod() {
-     //Create the UIImage
-     UIGraphicsBeginImageContext(view.frame.size)
-     view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-     let image = UIGraphicsGetImageFromCurrentImageContext()
-     UIGraphicsEndImageContext()
-     
-     //Save it to the camera roll
-     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-     }
-     
-check out this link also:
-     http://www.theappguruz.com/blog/ios-text-overlay-image
-     
-     FBShareKit:
-     
-     http://www.brianjcoleman.com/tutorial-how-to-share-in-facebook-sdk-4-0-for-swift/
-     
-    */
 
 }

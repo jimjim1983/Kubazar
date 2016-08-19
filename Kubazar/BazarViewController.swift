@@ -54,8 +54,6 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.segmentedControl.selectedSegmentIndex = 0
-        
         activeTableView.dataSource = self
         
         activeTableView.delegate = self
@@ -78,6 +76,8 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     
     override func viewWillAppear(animated: Bool) {
+        
+         self.segmentedControl.selectedSegmentIndex = 0
         currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             
             if snapshot.value is NSNull {
