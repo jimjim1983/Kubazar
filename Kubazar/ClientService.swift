@@ -35,8 +35,15 @@ struct ClientService {
     
    static func getCurrentUserUID() -> String {
     
-    let user = FIRAuth.auth()?.currentUser
-    return user!.uid
+    
+    if let user = FIRAuth.auth()?.currentUser {
+        return user.uid } else {
+        return "no user id"
+    }
+    
+    
+//    let user = FIRAuth.auth()?.currentUser
+//    return user!.uid
     
   }
     

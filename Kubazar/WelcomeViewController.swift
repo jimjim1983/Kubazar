@@ -109,6 +109,10 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         if let email = emailTextField.text, password = passwordTextField.text {
         
         FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.window?.rootViewController = appDelegate.tabBarController
+            appDelegate.tabBarController?.selectedIndex = 0
            
         }
         }

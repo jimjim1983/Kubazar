@@ -58,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = welcomeVC
         }
         
-//        
+        
 //        FIRAuth.auth()!.addAuthStateDidChangeListener() { (auth, user) in
 //            if let user = user {
 //                print("Auth State Changed: User is signed in with uid:", user.uid)
@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                self.window?.rootViewController = welcomeVC
 //            }
 //        }
-        
+//        
 
         
    //     self.window?.rootViewController = self.tabBarController
