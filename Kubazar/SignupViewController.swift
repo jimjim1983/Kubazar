@@ -25,8 +25,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signupPasswordTextField: UITextField!
     
-    
-    var timer = NSTimer()
+    var timer: NSTimer!
     
 
     override func viewDidLoad() {
@@ -115,10 +114,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         let birthdate = dateFormatter.stringFromDate(signupBirthdateDatePicker.date)
         
+        let email = signupEmailTextField.text
+        
         let signupUsername = signupUsernameTextField.text
         
         ClientService.profileRef.child("\(uid)/username").setValue(signupUsername)
         ClientService.profileRef.child("\(uid)/birthdate").setValue(birthdate)
+        ClientService.profileRef.child("\(uid)/email").setValue(email)
         
     }
     

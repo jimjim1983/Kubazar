@@ -15,6 +15,12 @@ class FriendsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    //table view for friends list
+    
+    //add new friend
+    
+    //duplicate data?
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

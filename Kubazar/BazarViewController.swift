@@ -77,6 +77,8 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewWillAppear(animated: Bool) {
         
+        //include what happens when Reachabiity says there's no internet
+        
          self.segmentedControl.selectedSegmentIndex = 0
         currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             
