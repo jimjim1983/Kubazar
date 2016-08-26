@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+//BaseAPIService could be a better name
 struct ClientService {
     
     static let rootRef = FIRDatabase.database().reference()
@@ -41,6 +42,10 @@ struct ClientService {
         return "no user id"
     }
     
+    
+    func checkIfUserExistsByEmailOrUsername(closure: String -> Void) {
+        
+    }
     
 //    let user = FIRAuth.auth()?.currentUser
 //    return user!.uid

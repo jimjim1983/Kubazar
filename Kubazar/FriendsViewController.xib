@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
+                <outlet property="friendsTableView" destination="CQt-Sq-r2u" id="z6k-KC-SS7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,12 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9R-3v-wvX">
-                    <rect key="frame" x="271" y="289" width="57" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8j-3t-GV0">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="66"/>
                     <color key="backgroundColor" red="0.35294117650000001" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,14 +29,30 @@
                         <navigationItem title="friends" id="Nda-fi-7tc"/>
                     </items>
                 </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQt-Sq-r2u">
+                    <rect key="frame" x="0.0" y="67" width="600" height="223"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kj-yb-I2Q">
+                    <rect key="frame" x="223" y="492" width="153" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="I1Z-he-OqP"/>
+                        <constraint firstAttribute="width" constant="153" id="oC5-fp-S4k"/>
+                    </constraints>
+                    <state key="normal" title="+ invite new friends!"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="k8j-3t-GV0" secondAttribute="trailing" id="Lki-CI-6RI"/>
                 <constraint firstItem="k8j-3t-GV0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NZO-bB-p6n"/>
-                <constraint firstItem="b9R-3v-wvX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="f9g-SZ-yLo"/>
-                <constraint firstItem="b9R-3v-wvX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="loh-g4-QOs"/>
+                <constraint firstAttribute="trailing" secondItem="CQt-Sq-r2u" secondAttribute="trailing" id="U6J-FO-Yuf"/>
+                <constraint firstAttribute="bottom" secondItem="5kj-yb-I2Q" secondAttribute="bottom" constant="78" id="XNf-wQ-RaL"/>
+                <constraint firstItem="5kj-yb-I2Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kvF-qN-0Yo"/>
+                <constraint firstItem="5kj-yb-I2Q" firstAttribute="top" secondItem="CQt-Sq-r2u" secondAttribute="bottom" constant="202" id="nIL-gu-GJa"/>
                 <constraint firstItem="k8j-3t-GV0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ogd-YS-kXw"/>
+                <constraint firstItem="CQt-Sq-r2u" firstAttribute="top" secondItem="k8j-3t-GV0" secondAttribute="bottom" constant="1" id="wJ7-0T-uEt"/>
+                <constraint firstItem="CQt-Sq-r2u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yIt-2H-Hew"/>
             </constraints>
         </view>
     </objects>

@@ -42,11 +42,15 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         PreviewDetail(title: "More", preferredHeight: 0.0) // 0.0 to get the default height.
     ]
     
+    // probably shouldn't put this here
+    
     let currentUserUID = ClientService.getCurrentUserUID()
     
     let currentActiveHaikusRef = ClientService.activeHaikusRef.child("\(ClientService.getCurrentUserUID())")
     
     let completedHaikusRef = ClientService.completedHaikusRef.child("\(ClientService.getCurrentUserUID())")
+    
+    //up to here ^: should put somewhere else because what if there's no internet connection or internet connection gets lost between 
     
     @IBOutlet weak var startHaikuLabel: UILabel!
     

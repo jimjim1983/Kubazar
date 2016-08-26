@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KubazarLogo" translatesAutoresizingMaskIntoConstraints="NO" id="YzO-6w-R3l">
-                                <rect key="frame" x="45" y="120" width="510" height="455"/>
+                                <rect key="frame" x="45" y="45" width="510" height="530"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -27,7 +27,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="YzO-6w-R3l" secondAttribute="trailing" constant="25" id="B7m-4I-gU8"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="YzO-6w-R3l" secondAttribute="bottom" constant="25" id="X6f-uL-4uT"/>
                             <constraint firstItem="YzO-6w-R3l" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="25" id="hnH-5p-6c8"/>
-                            <constraint firstItem="YzO-6w-R3l" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="qs8-8Z-0fx"/>
+                            <constraint firstItem="YzO-6w-R3l" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="25" id="qs8-8Z-0fx"/>
                         </constraints>
                     </view>
                 </viewController>

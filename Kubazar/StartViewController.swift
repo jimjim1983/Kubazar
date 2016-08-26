@@ -94,6 +94,10 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
         haikuThirdLine.userInteractionEnabled = false
     }
     
+    //refactor these steps functions, pass view to show
+    //hide all views function
+    
+    
     func stepThreeChoosePicture() {
         createNewHaikuView.alpha = 0
         chooseFriendsView.alpha = 0
@@ -204,5 +208,20 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return true
     }
 
+    
+    // write haiku to Firebase...Firebase generates unique ID for each haiku post:
+    /*
+ let postRef = ref.childByAppendingPath("posts")
+ let post1 = ["author": "gracehop", "title": "Announcing COBOL, a New Programming Language"]
+ let post1Ref = postRef.childByAutoId()
+ post1Ref.setValue(post1)
+ 
+ let post2 = ["author": "alanisawesome", "title": "The Turing Machine"]
+ let post2Ref = postRef.childByAutoId()
+ post2Ref.setValue(post2)
+     
+ postID = post1Ref.key 
+  // calling .key gets the unique ID of that post
+ */
 
 }
