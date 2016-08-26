@@ -11,8 +11,6 @@ import Firebase
 
 class WelcomeViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var welcomeLabel: UILabel!
-
     @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var signupButton: UIButton!
@@ -34,7 +32,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         
         passwordTextField.delegate = self
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(WelcomeViewController.changeWelcomeLabel), userInfo: nil, repeats: false)
+//        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(WelcomeViewController.changeWelcomeLabel), userInfo: nil, repeats: false)
        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
@@ -67,16 +65,16 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
 
-        setViewAlphaToZero()
-        kubazarLogo.alpha = 1
+//        setViewAlphaToZero()
+//        kubazarLogo.alpha = 1
         
-        kubazarLogo.transform = CGAffineTransformMakeScale(4, 4)
+        kubazarLogo.transform = CGAffineTransformMakeScale(2, 2)
         
         UIView.animateWithDuration(2.0,
                                    delay: 0,
-                                   usingSpringWithDamping: CGFloat(0.30),
-                                   initialSpringVelocity: CGFloat(7.0),
-                                   options: UIViewAnimationOptions.AllowUserInteraction,
+                                   usingSpringWithDamping: CGFloat(0.21),
+                                   initialSpringVelocity: CGFloat(6.7),
+                                   options: UIViewAnimationOptions.CurveEaseIn,
                                    animations: {
                                     self.kubazarLogo.transform = CGAffineTransformIdentity
             },
@@ -93,7 +91,6 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         emailTextField.alpha = 0
         passwordTextField.alpha = 0
         kubazarLogo.alpha = 0
-        welcomeLabel.alpha = 0
     }
     
     
@@ -134,14 +131,8 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func changeWelcomeLabel() {
-        welcomeLabel.text = "Let's create Haikus together"
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(WelcomeViewController.showLoginOrSignup), userInfo: nil, repeats: false)
-    }
-    
+
     func showLoginOrSignup() {
-        welcomeLabel.alpha = 0
         kubazarLogo.alpha = 1
         loginButton.alpha = 1
         signupButton.alpha = 1
