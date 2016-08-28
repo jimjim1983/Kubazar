@@ -53,6 +53,10 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         signupUsernameTextField.delegate = self
         
         signupPasswordTextField.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        
        
         
     }
@@ -92,7 +96,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 //    let continueY = firstContinueButton.center.y
 //    firstContinueButton.center.y -= viewBoundsHeight
     
-    UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.37, initialSpringVelocity: 6.7, options: .CurveEaseIn, animations: {
+    UIView.animateWithDuration(1.6, delay: 0, usingSpringWithDamping: 0.37, initialSpringVelocity: 6.7, options: .CurveEaseIn, animations: {
 //    self.welcomeToKubazarLabel.center.y = originWelcomeY
 //    self.letsWriteHaikusTogetherLabel.center.y = originLetsWriteY
     self.kubazarImage.center.x = kubazarX
@@ -106,14 +110,41 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
 
-    
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
    
+    func keyboardWillShow(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            if self.view.frame.origin.y == 0 {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.view.frame.origin.y -= keyboardSize.height
+                })
+            }
+        } else {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
