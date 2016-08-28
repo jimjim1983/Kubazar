@@ -17,6 +17,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var kubazarImage: UIImageView!
     
+    
+    @IBOutlet weak var secondKubazarImage: UIImageView!
+    
     @IBOutlet weak var createAccount: UILabel!
     
     @IBOutlet weak var firstView: UIView!
@@ -151,11 +154,41 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func isValidEmail(emailStr: String) -> Bool {
+        if emailStr.containsString("@") {
+            return true
+        } else {
+            return false
+        }
+    }
+    
 
     @IBAction func firstContinueButtonPressed(sender: AnyObject) {
         
-        self.firstView.alpha = 0
-        self.secondView.alpha = 1
+        firstView.endEditing(true)
+        
+        if let text = signupEmailTextField.text where !text.isEmpty && isValidEmail(text) == true
+        {
+            let viewBoundsHeight = view.bounds.height
+            let secondKubazarX = secondKubazarImage.center.x
+            secondKubazarImage.center.x -= viewBoundsHeight
+            
+            self.firstView.alpha = 0
+            self.secondView.alpha = 1
+            
+            UIView.animateWithDuration(1.6, delay: 0, usingSpringWithDamping: 0.37, initialSpringVelocity: 6.7, options: .CurveEaseIn, animations: {
+               
+                self.secondKubazarImage.center.x = secondKubazarX
+                
+                }, completion: nil)
+            
+        } else {
+                
+                
+            self.presentViewController(Alerts.showErrorMessage("Please enter a valid email address."), animated: true, completion: nil)
+        }
+        
      
     }
     
@@ -232,6 +265,17 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         thirdView.alpha = 0
         firstView.alpha = 1
     }
+    
+   
+    
+    
+//    func isValidEmail(testStr:String) -> Bool {
+//        print("validate emilId: \(testStr)")
+//        let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
+//        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+//        let result = emailTest.evaluateWithObject(testStr)
+//        return result
+//    }
     
 
 
