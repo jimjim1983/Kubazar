@@ -77,9 +77,16 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func startHaikuButton(sender: AnyObject) {
         startHaiku()
     }
+    
 
     
     override func viewWillAppear(animated: Bool) {
+        
+        let kubazarDarkGreen = UIColor(red: 12.0/255, green: 87.0/255, blue: 110.0/255, alpha: 1)
+
+        segmentedControl.layer.borderColor = kubazarDarkGreen.CGColor
+        segmentedControl.tintColor = kubazarDarkGreen
+            
         
         setAllViewsToZero()
         

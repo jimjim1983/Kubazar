@@ -10,11 +10,17 @@ import UIKit
 
 class StartViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
+    
+    @IBOutlet weak var firstKubazarMascot: UIImageView!
+    
     @IBOutlet weak var twoFriendsButton: UIButton!
     
     @IBOutlet weak var threeFriendsButton: UIButton!
     
     @IBOutlet weak var createNewHaikuView: UIView!
+    
+    
+    @IBOutlet weak var createNewHaikuLabel: UILabel!
     
     @IBOutlet weak var choosePictureView: UIView!
 
@@ -37,6 +43,11 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBOutlet weak var haikuThirdLine: UITextField!
     
+    var animator: UIDynamicAnimator!
+    
+    var gravity: UIGravityBehavior!
+    
+    var collision: UICollisionBehavior!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +69,21 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
         choosePictureView.alpha = 0
         enterHaikuView.alpha = 0
         congratsView.alpha = 0
+        
+        animator = UIDynamicAnimator(referenceView: self.createNewHaikuView)
+        gravity = UIGravityBehavior(items: [firstKubazarMascot])
+        animator.addBehavior(gravity)
+        
+        collision = UICollisionBehavior(items: [firstKubazarMascot])
+        collision.addBoundaryWithIdentifier("createNewHaikuLabel", forPath: UIBezierPath(rect: createNewHaikuLabel.frame))
+        collision.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(collision)
+        
+        let itemBehavior = UIDynamicItemBehavior(items: [firstKubazarMascot])
+        itemBehavior.elasticity = 0.9
+        animator.addBehavior(itemBehavior)
+        
+        
     }
     
     func stepTwoChooseOneFriend () {

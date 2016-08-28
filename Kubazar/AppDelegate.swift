@@ -39,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let controllers = [firstTab, secondTab, thirdTab, fourthTab]
         tabBarController?.viewControllers = controllers
         
+        UITabBar.appearance().tintColor = UIColor(red: 12.0/255, green: 87.0/255, blue: 110.0/255, alpha: 1)
+        
         firstTab.tabBarItem = UITabBarItem(title: "Bazar", image: UIImage(named: "bazarA"), selectedImage: UIImage(named: "bazarB"))
         
         secondTab.tabBarItem = UITabBarItem(title: "Start", image: UIImage(named: "startA"), selectedImage: UIImage(named: "startB"))
