@@ -42,7 +42,7 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         PreviewDetail(title: "More", preferredHeight: 0.0) // 0.0 to get the default height.
     ]
     
-    // probably shouldn't put this here
+    // URGENT: probably shouldn't put this here because if there's no internet, it can't do this
     
     let currentUserUID = ClientService.getCurrentUserUID()
     
@@ -81,10 +81,12 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewWillAppear(animated: Bool) {
         
+        setAllViewsToZero()
+        
         //include what happens when Reachabiity says there's no internet
         
          self.segmentedControl.selectedSegmentIndex = 0
-        currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+         currentActiveHaikusRef.observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             
             if snapshot.value is NSNull {
                 
@@ -106,6 +108,12 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
         })
     }
    
+    func setAllViewsToZero() {
+        self.activeView.alpha = 0
+        self.completedView.alpha = 0
+        self.activeStartView.alpha = 0
+    }
+    
     @IBAction func segmentedControlIndexChanged(sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:

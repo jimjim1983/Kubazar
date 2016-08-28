@@ -41,6 +41,11 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     var timer: NSTimer!
     
+    @IBOutlet weak var congratsKubazar: UIImageView!
+    
+    
+    @IBOutlet weak var congratsLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -212,11 +217,26 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                
                 } else {
                     
+                    self.secondView.endEditing(true)
                     self.secondView.alpha = 0
                     self.thirdView.alpha = 1
                    
                     if let currentUser = user?.uid {
                     self.createNewUserProfile(currentUser)
+                        
+                    self.congratsKubazar.alpha = 1
+                    self.congratsLabel.alpha = 1
+                        UIView.animateWithDuration(1.5) {
+                          self.congratsKubazar.alpha = 0
+                          self.congratsLabel.alpha = 0
+                        }
+                        
+                    let animation = CABasicAnimation(keyPath: "transform.scale")
+                        animation.toValue = NSNumber(float: 2.0)
+                        animation.duration = 1.5
+                        animation.autoreverses = false
+                        self.congratsLabel.layer.addAnimation(animation, forKey: nil)
+                        self.congratsKubazar.layer.addAnimation(animation, forKey: nil)
                         
                         NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(SignupViewController.changeRootViewToTabBarController), userInfo: nil, repeats: false)
 
@@ -228,10 +248,20 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
     func changeRootViewToTabBarController() {
+        
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+//        UIView.transitionFromView((appDelegate.window?.rootViewController?.view)! , toView: (appDelegate.tabBarController?.view)!, duration: 1.0, options: .TransitionCrossDissolve) { (Bool) in
+//            appDelegate.window?.rootViewController = appDelegate.tabBarController
+//            appDelegate.tabBarController?.selectedIndex = 0
+//            self.dismissViewControllerAnimated(true, completion: nil)
+//            
+//        }
+        
     appDelegate.window?.rootViewController = appDelegate.tabBarController
     appDelegate.tabBarController?.selectedIndex = 0
-    
+    dismissViewControllerAnimated(true, completion: nil)
+        
     }
    
     func createNewUserProfile(uid: String) {
@@ -266,17 +296,5 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         firstView.alpha = 1
     }
     
-   
     
-    
-//    func isValidEmail(testStr:String) -> Bool {
-//        print("validate emilId: \(testStr)")
-//        let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
-//        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-//        let result = emailTest.evaluateWithObject(testStr)
-//        return result
-//    }
-    
-
-
 }

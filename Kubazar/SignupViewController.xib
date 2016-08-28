@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignupViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
+                <outlet property="congratsKubazar" destination="0gK-c5-mL8" id="FqK-eM-8Lh"/>
+                <outlet property="congratsLabel" destination="nbm-mO-e7L" id="DcK-R4-f4k"/>
                 <outlet property="createAccount" destination="CdE-YB-xKw" id="95f-0g-nUg"/>
                 <outlet property="firstContinueButton" destination="dJu-hN-GSb" id="8sW-SH-lNA"/>
                 <outlet property="firstView" destination="JqB-Ga-4gD" id="nYi-SY-IHf"/>
@@ -28,35 +30,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cE-b1-XF9" userLabel="Third View">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KubazarMascot" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-c5-mL8">
-                            <rect key="frame" x="180" y="236" width="240" height="128"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="128" id="bcL-YF-fGx"/>
-                                <constraint firstAttribute="width" constant="240" id="xQ1-uo-0wH"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats! Welcome to Kubazar!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-mO-e7L">
-                            <rect key="frame" x="0.0" y="124" width="600" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="DDd-Qi-ODa"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="nbm-mO-e7L" firstAttribute="leading" secondItem="7cE-b1-XF9" secondAttribute="leading" id="01L-cn-qIK"/>
-                        <constraint firstAttribute="trailing" secondItem="nbm-mO-e7L" secondAttribute="trailing" id="0eZ-Av-Z5e"/>
-                        <constraint firstItem="0gK-c5-mL8" firstAttribute="centerX" secondItem="7cE-b1-XF9" secondAttribute="centerX" id="gTB-LE-yOP"/>
-                        <constraint firstItem="0gK-c5-mL8" firstAttribute="top" secondItem="nbm-mO-e7L" secondAttribute="bottom" constant="91" id="hpj-AV-IYO"/>
-                        <constraint firstItem="0gK-c5-mL8" firstAttribute="centerY" secondItem="7cE-b1-XF9" secondAttribute="centerY" id="lJU-8Y-AiC"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqB-Ga-4gD">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
@@ -404,6 +377,51 @@
                         </mask>
                     </variation>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cE-b1-XF9" userLabel="Third View">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kubazarMascotBackgroundRemoved" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-c5-mL8">
+                            <rect key="frame" x="200" y="200" width="200" height="200"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="6v4-sF-rEt"/>
+                                <constraint firstAttribute="height" constant="200" id="Bdo-po-xjP"/>
+                                <constraint firstAttribute="height" constant="128" id="bcL-YF-fGx"/>
+                                <constraint firstAttribute="width" constant="200" id="ouo-1p-iKW"/>
+                                <constraint firstAttribute="width" constant="240" id="xQ1-uo-0wH"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="6v4-sF-rEt"/>
+                                    <exclude reference="bcL-YF-fGx"/>
+                                    <exclude reference="xQ1-uo-0wH"/>
+                                </mask>
+                            </variation>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrats! Welcome to Kubazar!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbm-mO-e7L">
+                            <rect key="frame" x="0.0" y="104" width="600" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="DDd-Qi-ODa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                            <color key="textColor" red="0.047058823530000002" green="0.3411764706" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="nbm-mO-e7L" firstAttribute="leading" secondItem="7cE-b1-XF9" secondAttribute="leading" id="01L-cn-qIK"/>
+                        <constraint firstAttribute="trailing" secondItem="nbm-mO-e7L" secondAttribute="trailing" id="0eZ-Av-Z5e"/>
+                        <constraint firstItem="0gK-c5-mL8" firstAttribute="top" secondItem="nbm-mO-e7L" secondAttribute="bottom" constant="75" id="Agt-pg-bEw"/>
+                        <constraint firstItem="0gK-c5-mL8" firstAttribute="centerX" secondItem="7cE-b1-XF9" secondAttribute="centerX" id="gTB-LE-yOP"/>
+                        <constraint firstItem="0gK-c5-mL8" firstAttribute="top" secondItem="nbm-mO-e7L" secondAttribute="bottom" constant="91" id="hpj-AV-IYO"/>
+                        <constraint firstItem="0gK-c5-mL8" firstAttribute="centerY" secondItem="7cE-b1-XF9" secondAttribute="centerY" id="lJU-8Y-AiC"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="hpj-AV-IYO"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -425,7 +443,6 @@
     </objects>
     <resources>
         <image name="Continue" width="465" height="121"/>
-        <image name="KubazarMascot" width="968" height="1463"/>
         <image name="kubazarMascotBackgroundRemoved" width="242" height="366"/>
     </resources>
 </document>
