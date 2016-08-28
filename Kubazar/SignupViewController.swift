@@ -11,6 +11,14 @@ import Firebase
 
 class SignupViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var welcomeToKubazarLabel: UILabel!
+    
+    @IBOutlet weak var letsWriteHaikusTogetherLabel: UILabel!
+    
+    @IBOutlet weak var kubazarImage: UIImageView!
+    
+    @IBOutlet weak var createAccount: UILabel!
+    
     @IBOutlet weak var firstView: UIView!
     
     @IBOutlet weak var secondView: UIView!
@@ -25,6 +33,9 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var signupPasswordTextField: UITextField!
     
+    
+    @IBOutlet weak var firstContinueButton: UIButton!
+    
     var timer: NSTimer!
     
 
@@ -35,6 +46,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         thirdView.alpha = 0
         
+        firstView.alpha = 1
+        
         signupEmailTextField.delegate = self
         
         signupUsernameTextField.delegate = self
@@ -43,6 +56,56 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
        
         
     }
+    
+
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        firstViewAnimation()
+        
+    }
+    
+    func firstViewAnimation() {
+        
+    let viewBoundsHeight = view.bounds.height
+        
+//    let originWelcomeY = welcomeToKubazarLabel.center.y
+//    welcomeToKubazarLabel.center.y -= view.bounds.height
+//        
+//   
+        
+//    let originLetsWriteY = letsWriteHaikusTogetherLabel.center.y
+//    letsWriteHaikusTogetherLabel.center.y -= viewBoundsHeight
+        
+    let kubazarX = kubazarImage.center.x
+    kubazarImage.center.x -= viewBoundsHeight
+//        
+//    let createAccountY = createAccount.center.y
+//    createAccount.center.y -= viewBoundsHeight
+//
+//    let emailY = signupEmailTextField.center.y
+//    signupEmailTextField.center.y -= viewBoundsHeight
+//        
+//    let passwordY = signupPasswordTextField.center.y
+//    signupPasswordTextField.center.y -= viewBoundsHeight
+//        
+//    let continueY = firstContinueButton.center.y
+//    firstContinueButton.center.y -= viewBoundsHeight
+    
+    UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: 0.37, initialSpringVelocity: 6.7, options: .CurveEaseIn, animations: {
+//    self.welcomeToKubazarLabel.center.y = originWelcomeY
+//    self.letsWriteHaikusTogetherLabel.center.y = originLetsWriteY
+    self.kubazarImage.center.x = kubazarX
+//    self.createAccount.center.y = createAccountY
+//    self.signupEmailTextField.center.y = emailY
+//    self.signupPasswordTextField.center.y = passwordY
+//    self.firstContinueButton.center.y = continueY
+    
+    }, completion: nil)
+    
+    
+    }
+    
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -125,6 +188,19 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+    
+    @IBAction func firstViewBackButtonPressed(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion:  nil)
+    }
+    
+    
+    @IBAction func secondViewBackButtonPressed(sender: AnyObject) {
+        
+        secondView.alpha = 0
+        thirdView.alpha = 0
+        firstView.alpha = 1
+    }
     
 
 

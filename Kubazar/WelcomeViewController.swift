@@ -68,22 +68,42 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
 //        setViewAlphaToZero()
 //        kubazarLogo.alpha = 1
         
+        
         kubazarLogo.transform = CGAffineTransformMakeScale(2, 2)
         
         UIView.animateWithDuration(2.0,
                                    delay: 0,
-                                   usingSpringWithDamping: CGFloat(0.21),
-                                   initialSpringVelocity: CGFloat(6.7),
+                                   usingSpringWithDamping: 0.37,
+                                   initialSpringVelocity: 6.7,
                                    options: UIViewAnimationOptions.CurveEaseIn,
                                    animations: {
                                     self.kubazarLogo.transform = CGAffineTransformIdentity
             },
                                    completion: { Void in()  }
         )
-    
-
         
+        let originEmailY = emailTextField.center.y
+        emailTextField.center.y -= view.bounds.height
+        
+        let originPasswordY = self.passwordTextField.center.y
+        passwordTextField.center.y -= view.bounds.height
+        
+        let originLoginY = self.loginButton.center.y
+        loginButton.center.y -= view.bounds.height
+        
+        let originSignUpY = self.signupButton.center.y
+        signupButton.center.y -= view.bounds.height
+        
+        
+        
+        UIView.animateWithDuration(1.0, delay: 0, usingSpringWithDamping: CGFloat(0.9), initialSpringVelocity: CGFloat(6.7), options: .CurveEaseIn, animations: {
+            self.loginButton.center.y = originLoginY
+            self.signupButton.center.y = originSignUpY
+            self.emailTextField.center.y = originEmailY
+            self.passwordTextField.center.y = originPasswordY
+            }, completion: nil)
     }
+    
     
     func setViewAlphaToZero() {
         loginButton.alpha = 0
@@ -168,8 +188,12 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBAction func signupButtonPressed(sender: AnyObject) {
+                
+        
         let signupVC = SignupViewController()
-        presentViewController(signupVC, animated: true, completion: nil)
+        signupVC.modalTransitionStyle = .CrossDissolve
+        
+       presentViewController(signupVC, animated: true, completion: nil)
     }
     
 }
