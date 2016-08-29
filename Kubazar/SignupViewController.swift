@@ -217,6 +217,24 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                
                 } else {
                     
+//                    let email = "user@example.com"
+                    
+                    FIRAuth.auth()?.currentUser?.sendEmailVerificationWithCompletion({ (error) in
+                        if let error = error {
+                            self.presentViewController(Alerts.showErrorMessage(error.localizedDescription), animated: true, completion: nil)
+                            return
+                        }
+                        print("Email verification sent.")
+                    })
+                    
+                    FIRAuth.auth()?.sendPasswordResetWithEmail(email) { error in
+                        if error != nil {
+                            //error
+                        } else {
+                            // Password reset email sent.
+                        }
+                    }
+                    
                     self.secondView.endEditing(true)
                     self.secondView.alpha = 0
                     self.thirdView.alpha = 1
@@ -296,5 +314,6 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         firstView.alpha = 1
     }
     
+  
     
 }

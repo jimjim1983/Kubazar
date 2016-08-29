@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class FriendsViewController: UIViewController, UITextFieldDelegate {
+class FriendsViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
     
     @IBOutlet weak var xButton: UIButton!
@@ -36,6 +37,11 @@ class FriendsViewController: UIViewController, UITextFieldDelegate {
     //duplicate data?
     
     // if you don't have any friends, tableView alpha is zero, and you display label that says: "You don't have any friends yet."
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,13 +64,70 @@ class FriendsViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func inviteNewFriendsButtonPressed(sender: AnyObject) {
         
-//        inviteNewFriendsView.layer.cornerRadius = 33
+        inviteNewFriendsViewSetup()
         
-//        xButton.layer.cornerRadius = 1
+//        inviteNewFriendsView.layer.cornerRadius = 33
+//        inviteNewFriendsView.alpha = 1
+//        xButton.alpha = 1
+//        inviteNewFriendsButton.alpha = 0
+        
+    }
+    
+    func inviteNewFriendsViewSetup() {
+        inviteNewFriendsView.layer.cornerRadius = 33
         inviteNewFriendsView.alpha = 1
         xButton.alpha = 1
         inviteNewFriendsButton.alpha = 0
+    }
+    
+    
+    @IBAction func addFriendButtonPressed(sender: AnyObject) {
         
+    inviteNewFriendsView.endEditing(true)
+        
+        if let text = friendsEmailTextField.text where !text.isEmpty && isValidEmail(text) == true {
+    
+                print(text)
+            
+            ClientService.profileRef.queryOrderedByChild("email").queryEqualToValue(text).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        
+                print(text)
+                print(snapshot)
+        
+                if snapshot.exists() {
+                    print("user exists")
+                } else {
+                    print("user does not exist")
+                    self.sendEmail(text)
+                }
+                })
+            
+            } else {
+            
+            self.presentViewController(Alerts.showErrorMessage("Please enter a valid email address."), animated: true, completion: nil)
+        }
+        
+    }
+    
+    func sendEmail(email: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([email])
+            mail.setSubject("Play Kubazar with me!")
+            mail.setMessageBody("<p>Play Kubazar with me!</p>", isHTML: true)
+            
+            presentViewController(mail, animated: true, completion: nil)
+        } else {
+            self.presentViewController(Alerts.showErrorMessage("You aren't currently able to send an invitation email. Please try again later."), animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true) { 
+            self.inviteNewFriendsViewSetup()
+        }
+//        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func isValidEmail(emailStr: String) -> Bool {
@@ -88,8 +151,7 @@ class FriendsViewController: UIViewController, UITextFieldDelegate {
         
         
 //        let friendsUserID =
-//        
-//        friendsCurrentUserRef.updateChildValues(<#T##values: [NSObject : AnyObject]##[NSObject : AnyObject]#>)
+//      friendsCurrentUserRef.updateChildValues(<#T##values: [NSObject : AnyObject]##[NSObject : AnyObject]#>)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

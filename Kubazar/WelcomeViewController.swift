@@ -41,7 +41,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
-        let kubazarOriginY = kubazarLogo.frame.origin.y
+//        let kubazarOriginY = kubazarLogo.frame.origin.y
         
         kubazarLogo.alpha = 1
         
@@ -123,7 +123,6 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
     
     func keyboardWillHide(sender: NSNotification) {
         let userInfo: [NSObject : AnyObject] = sender.userInfo!
@@ -131,7 +130,6 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         self.view.frame.origin.y += keyboardSize.height
     }
     
-
     func keyboardWillShow(sender: NSNotification) {
         let userInfo: [NSObject : AnyObject] = sender.userInfo!
         
@@ -151,6 +149,7 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+
 
     func showLoginOrSignup() {
         kubazarLogo.alpha = 1
@@ -177,10 +176,14 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         
         FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
             
+            if error != nil {
+            self.presentViewController(Alerts.showErrorMessage((error?.localizedDescription)!), animated: true, completion: nil)
+            } else {
+            
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             appDelegate.window?.rootViewController = appDelegate.tabBarController
             appDelegate.tabBarController?.selectedIndex = 0
-           
+            }
         }
         }
         }
@@ -195,5 +198,8 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         
        presentViewController(signupVC, animated: true, completion: nil)
     }
+    
+
+
     
 }
