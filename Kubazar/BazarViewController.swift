@@ -24,6 +24,9 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var completedTableView: UITableView!
     
+    @IBOutlet weak var startHaikuButton: UIButton!
+    
+    
     struct PreviewDetail {
         let title: String
         let preferredHeight: Double
@@ -99,10 +102,17 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
                 
                 print("You have no active haikus. Start a haiku!")
                 
+                self.startHaikuButton.transform = CGAffineTransformMakeScale(0.7, 0.7)
+                
                 self.activeView.alpha = 0
                 self.completedView.alpha = 0
                 self.activeStartView.alpha = 1
                 self.startHaikuLabel.text = "You have no active haikus."
+                
+                UIView.animateWithDuration(1.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 9, options: .AllowUserInteraction, animations: {
+                    self.startHaikuButton.transform = CGAffineTransformIdentity
+                    }, completion: nil)
+
                 
                 
             } else {

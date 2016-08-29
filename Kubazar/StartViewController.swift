@@ -9,7 +9,12 @@
 import UIKit
 
 class StartViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+
     
+    
+    @IBOutlet weak var secondBackButton: UIButton!
+    
+    @IBOutlet weak var imageViewBoundary: UIImageView!
     
     @IBOutlet weak var firstKubazarMascot: UIImageView!
     
@@ -18,7 +23,6 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var threeFriendsButton: UIButton!
     
     @IBOutlet weak var createNewHaikuView: UIView!
-    
     
     @IBOutlet weak var createNewHaikuLabel: UILabel!
     
@@ -51,11 +55,20 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    haikuFirstLine.delegate = self
+        
+    haikuSecondLine.delegate = self
+        
+    haikuThirdLine.delegate = self
+        
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        
+    NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
 
         
-        stepOneCreateNewHaiku()
-        // Do any additional setup after loading the view.
-    
+    stepOneCreateNewHaiku()
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,34 +77,37 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func stepOneCreateNewHaiku() {
-        createNewHaikuView.alpha = 1
-        chooseFriendsView.alpha = 0
-        choosePictureView.alpha = 0
-        enterHaikuView.alpha = 0
-        congratsView.alpha = 0
+       
+        twoFriendsButton.transform = CGAffineTransformMakeScale(0.7, 0.7)
+        threeFriendsButton.transform = CGAffineTransformMakeScale(0.7, 0.7)
         
+        setAllViewAlphasToZero()
+        createNewHaikuView.alpha = 1
+       
         animator = UIDynamicAnimator(referenceView: self.createNewHaikuView)
         gravity = UIGravityBehavior(items: [firstKubazarMascot])
         animator.addBehavior(gravity)
         
         collision = UICollisionBehavior(items: [firstKubazarMascot])
         collision.addBoundaryWithIdentifier("createNewHaikuLabel", forPath: UIBezierPath(rect: createNewHaikuLabel.frame))
+        
         collision.translatesReferenceBoundsIntoBoundary = true
         animator.addBehavior(collision)
         
         let itemBehavior = UIDynamicItemBehavior(items: [firstKubazarMascot])
-        itemBehavior.elasticity = 0.9
+        itemBehavior.elasticity = 0.7
         animator.addBehavior(itemBehavior)
         
+        UIView.animateWithDuration(1.6, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 9, options: .AllowUserInteraction, animations: {
+            self.twoFriendsButton.transform = CGAffineTransformIdentity
+            self.threeFriendsButton.transform = CGAffineTransformIdentity
+            }, completion: nil)
         
     }
     
     func stepTwoChooseOneFriend () {
-        createNewHaikuView.alpha = 0
+        setAllViewAlphasToZero()
         chooseFriendsView.alpha = 1
-        choosePictureView.alpha = 0
-        enterHaikuView.alpha = 0
-        congratsView.alpha = 0
         
         haikuSecondLine.placeholder = "Second player writes here."
         
@@ -103,12 +119,9 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func stepTwoChooseTwoFriends () {
-        createNewHaikuView.alpha = 0
+        setAllViewAlphasToZero()
         chooseFriendsView.alpha = 1
-        choosePictureView.alpha = 0
-        enterHaikuView.alpha = 0
-        congratsView.alpha = 0
-        
+       
         haikuSecondLine.placeholder = "Second player writes here."
         
         haikuSecondLine.userInteractionEnabled = false
@@ -125,28 +138,17 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     
     func stepThreeChoosePicture() {
-        createNewHaikuView.alpha = 0
-        chooseFriendsView.alpha = 0
+        setAllViewAlphasToZero()
         choosePictureView.alpha = 1
-        enterHaikuView.alpha = 0
-        congratsView.alpha = 0
     }
     
     func stepFourEnterHaiku() {
-        createNewHaikuView.alpha = 0
-        chooseFriendsView.alpha = 0
-        choosePictureView.alpha = 0
+        setAllViewAlphasToZero()
         enterHaikuView.alpha = 1
-        congratsView.alpha = 0
-        
-        
     }
     
     func stepFiveCongrats() {
-        createNewHaikuView.alpha = 0
-        chooseFriendsView.alpha = 0
-        choosePictureView.alpha = 0
-        enterHaikuView.alpha = 0
+        setAllViewAlphasToZero()
         congratsView.alpha = 1
     }
     
@@ -173,6 +175,30 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         stepTwoChooseTwoFriends()
         
+    }
+    
+    
+    @IBAction func secondBackButtonPressed(sender: AnyObject) {
+        setAllViewAlphasToZero()
+        chooseFriendsView.alpha = 1
+        
+    }
+    
+    @IBAction func thirdBackButtonPressed(sender: AnyObject) {
+        haikuFirstLine.text? = ""
+        haikuSecondLine.text? = ""
+        haikuThirdLine.text? = ""
+        setAllViewAlphasToZero()
+        choosePictureView.alpha = 1
+    }
+    
+    
+    func setAllViewAlphasToZero() {
+        createNewHaikuView.alpha = 0
+        chooseFriendsView.alpha = 0
+        choosePictureView.alpha = 0
+        enterHaikuView.alpha = 0
+        congratsView.alpha = 0
     }
     
     @IBAction func cameraButtonPressed(sender: AnyObject) {
@@ -227,13 +253,7 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     }
     
-    //textfield delegate 
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
+  
     
     // write haiku to Firebase...Firebase generates unique ID for each haiku post:
     /*
@@ -250,4 +270,43 @@ class StartViewController: UIViewController, UIImagePickerControllerDelegate, UI
   // calling .key gets the unique ID of that post
  */
 
+    //keyboard code
+    
+    
+    //textfield delegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            if self.view.frame.origin.y == 0 {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.view.frame.origin.y -= keyboardSize.height
+                })
+            }
+        } else {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
+        }
+    }
+
+
+    
+    
+    
 }

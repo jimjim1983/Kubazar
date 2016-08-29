@@ -38,7 +38,9 @@ class FriendsViewController: UIViewController {
         
         let currentUserUID = ClientService.getCurrentUserUID()
         
-        let friendsCurrentUserRef = ClientService.friendsRef.child("\(currentUserUID)")
+        let friendsOfCurrentUserRef = ClientService.friendsRef.child("\(currentUserUID)")
+        
+        
         
 //        let friendsUserID =
 //        

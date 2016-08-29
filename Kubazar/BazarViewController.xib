@@ -14,6 +14,7 @@
                 <outlet property="completedView" destination="nJ2-hc-cP7" id="pjQ-zw-0fP"/>
                 <outlet property="navigationBar" destination="RIk-g4-NuX" id="NZe-tY-Yib"/>
                 <outlet property="segmentedControl" destination="bXi-O9-DB2" id="eKw-c6-MgX"/>
+                <outlet property="startHaikuButton" destination="zhu-9A-N5G" id="wvK-E0-G26"/>
                 <outlet property="startHaikuLabel" destination="V3I-NU-m10" id="bAx-gQ-BeG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
