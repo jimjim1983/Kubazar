@@ -171,7 +171,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func firstContinueButtonPressed(sender: AnyObject) {
         
-        firstView.endEditing(true)
+        firstView.resignFirstResponder()
+//        firstView.endEditing(true)
         
         if let text = signupEmailTextField.text where !text.isEmpty && isValidEmail(text) == true
         {
