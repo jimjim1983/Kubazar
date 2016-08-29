@@ -8,12 +8,23 @@
 
 import UIKit
 
-class FriendsViewController: UIViewController {
+class FriendsViewController: UIViewController, UITextFieldDelegate {
+    
+    
+    @IBOutlet weak var xButton: UIButton!
     
     @IBOutlet weak var friendsTableView: UITableView!
+    
+    @IBOutlet weak var inviteNewFriendsView: UIView!
+    
+    @IBOutlet weak var friendsEmailTextField: UITextField!
 
+    @IBOutlet weak var inviteNewFriendsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       friendsEmailTextField.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -23,12 +34,46 @@ class FriendsViewController: UIViewController {
     //add new friend
     
     //duplicate data?
+    
+    // if you don't have any friends, tableView alpha is zero, and you display label that says: "You don't have any friends yet."
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+         inviteNewFriendsView.alpha = 0
+        xButton.alpha = 0
+    }
+    
+    
+    @IBAction func xButtonPressed(sender: AnyObject) {
+        xButton.alpha = 0
+        inviteNewFriendsView.alpha = 0
+        inviteNewFriendsButton.alpha = 1
+        friendsEmailTextField.text? = ""
+        
+    }
+    
+    @IBAction func inviteNewFriendsButtonPressed(sender: AnyObject) {
+        
+//        inviteNewFriendsView.layer.cornerRadius = 33
+        
+//        xButton.layer.cornerRadius = 1
+        inviteNewFriendsView.alpha = 1
+        xButton.alpha = 1
+        inviteNewFriendsButton.alpha = 0
+        
+    }
+    
+    func isValidEmail(emailStr: String) -> Bool {
+        if emailStr.containsString("@") {
+            return true
+        } else {
+            return false
+        }
+    }
     
 
     
@@ -46,6 +91,37 @@ class FriendsViewController: UIViewController {
 //        
 //        friendsCurrentUserRef.updateChildValues(<#T##values: [NSObject : AnyObject]##[NSObject : AnyObject]#>)
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillHide(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        self.view.frame.origin.y += keyboardSize.height
+    }
+    
+    func keyboardWillShow(sender: NSNotification) {
+        let userInfo: [NSObject : AnyObject] = sender.userInfo!
+        
+        let keyboardSize: CGSize = userInfo[UIKeyboardFrameBeginUserInfoKey]!.CGRectValue.size
+        let offset: CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue.size
+        
+        if keyboardSize.height == offset.height {
+            if self.view.frame.origin.y == 0 {
+                UIView.animateWithDuration(0.1, animations: { () -> Void in
+                    self.view.frame.origin.y -= keyboardSize.height
+                })
+            }
+        } else {
+            UIView.animateWithDuration(0.1, animations: { () -> Void in
+                self.view.frame.origin.y += keyboardSize.height - offset.height
+            })
+        }
+    }
+
     
     
 }
