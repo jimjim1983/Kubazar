@@ -207,7 +207,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
     
     func createNewUser() {
-        if let email = signupEmailTextField.text, password = signupPasswordTextField.text {
+        if let email = signupEmailTextField.text?.lowercaseString, password = signupPasswordTextField.text {
             FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: { (user, error) in
                 
                 if error != nil {
@@ -290,13 +290,14 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         
         let birthdate = dateFormatter.stringFromDate(signupBirthdateDatePicker.date)
         
-        let email = signupEmailTextField.text
+        let email = signupEmailTextField.text?.lowercaseString
         
-        let signupUsername = signupUsernameTextField.text
+        let signupUsername = signupUsernameTextField.text?.lowercaseString
         
         ClientService.profileRef.child("\(uid)/username").setValue(signupUsername)
         ClientService.profileRef.child("\(uid)/birthdate").setValue(birthdate)
         ClientService.profileRef.child("\(uid)/email").setValue(email)
+        ClientService.profileRef.child("\(uid)/uid").setValue(uid)
         
     }
     

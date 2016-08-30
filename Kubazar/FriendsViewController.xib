@@ -60,7 +60,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97a-6d-aaJ">
-                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <rect key="frame" x="5" y="5" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="MI0-1S-TNt"/>
                                 <constraint firstAttribute="width" constant="30" id="QGX-Iz-pnp"/>
@@ -78,11 +78,11 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="2Kw-Ul-kv9"/>
                         <constraint firstAttribute="width" constant="250" id="7ro-4P-Mz3"/>
-                        <constraint firstItem="97a-6d-aaJ" firstAttribute="top" secondItem="inV-x7-lsk" secondAttribute="top" id="HW4-0F-Fph"/>
+                        <constraint firstItem="97a-6d-aaJ" firstAttribute="top" secondItem="inV-x7-lsk" secondAttribute="top" constant="5" id="HW4-0F-Fph"/>
                         <constraint firstAttribute="bottom" secondItem="Fgj-2H-us2" secondAttribute="bottom" constant="21" id="IrX-0x-36L"/>
                         <constraint firstItem="Kt0-b7-phS" firstAttribute="centerY" secondItem="inV-x7-lsk" secondAttribute="centerY" id="L9N-aa-ldz"/>
                         <constraint firstAttribute="trailing" secondItem="Kt0-b7-phS" secondAttribute="trailing" constant="8" id="eg8-Xa-eqc"/>
-                        <constraint firstItem="97a-6d-aaJ" firstAttribute="leading" secondItem="inV-x7-lsk" secondAttribute="leading" id="hcp-69-NEd"/>
+                        <constraint firstItem="97a-6d-aaJ" firstAttribute="leading" secondItem="inV-x7-lsk" secondAttribute="leading" constant="5" id="hcp-69-NEd"/>
                         <constraint firstItem="Kt0-b7-phS" firstAttribute="centerX" secondItem="inV-x7-lsk" secondAttribute="centerX" id="j0j-yb-spS"/>
                         <constraint firstAttribute="trailing" secondItem="Fgj-2H-us2" secondAttribute="trailing" constant="21" id="rzm-R4-rer"/>
                         <constraint firstItem="Kt0-b7-phS" firstAttribute="leading" secondItem="inV-x7-lsk" secondAttribute="leading" constant="8" id="sLI-NN-eZM"/>

@@ -106,8 +106,11 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
                         
                        let friendUID = snapshot.key
                         
+                        print("friendUID is \(friendUID)")
                         
+                       self.addExistingUserAsFriend(friendUID, email: friendsEmailText)
                         
+                    
                        print(snapshot)
                         
                         print("user exists")
@@ -142,11 +145,33 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
         
     }
     
-    func addExistingUserAsFriend(emailAddress: String) {
+    func addExistingUserAsFriend(friendUID: String, email: String) {
+        
+    
         
         let currentUserUID = ClientService.getCurrentUserUID()
-        let friendsOfCurrentUserRef = ClientService.friendsRef.child("\(currentUserUID)")
+        let currentUserFriendsRef = ClientService.friendsRef.child("\(currentUserUID)")
         
+        
+//        if friendUID == currentUserUID {
+//            self.presentViewController(Alerts.showErrorMessage("Sorry! You can't be friends with yourself for Kubazar."), animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+//        }
+        
+        currentUserFriendsRef.queryOrderedByChild("key").queryEqualToValue(friendUID).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            if snapshot.exists() {
+                
+                self.presentViewController(Alerts.showErrorMessage("This friend is already added to your friend list!"), animated: true, completion: nil)
+                
+            } else {
+                
+                currentUserFriendsRef.child("\(friendUID)/email").setValue(email)
+                
+//                ClientService.profileRef.child("\(uid)/username").setValue(signupUsername)
+//                
+            }
+            
+        })
         
         
         //maybe this should be an if let else say "you're not logged in or there's no itnernet connection
