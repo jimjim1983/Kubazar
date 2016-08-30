@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class FriendsViewController: UIViewController, UITextFieldDelegate {
+class FriendsViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
     
     @IBOutlet weak var xButton: UIButton!
@@ -47,6 +48,14 @@ class FriendsViewController: UIViewController, UITextFieldDelegate {
         xButton.alpha = 0
     }
     
+    func inviteNewFriendsViewSetup() {
+        inviteNewFriendsView.layer.cornerRadius = 33
+        inviteNewFriendsView.alpha = 1
+        xButton.alpha = 1
+        inviteNewFriendsButton.alpha = 0
+    }
+    
+    
     
     @IBAction func xButtonPressed(sender: AnyObject) {
         xButton.alpha = 0
@@ -56,16 +65,15 @@ class FriendsViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
+    
     @IBAction func inviteNewFriendsButtonPressed(sender: AnyObject) {
         
-//        inviteNewFriendsView.layer.cornerRadius = 33
-        
-//        xButton.layer.cornerRadius = 1
-        inviteNewFriendsView.alpha = 1
-        xButton.alpha = 1
-        inviteNewFriendsButton.alpha = 0
+        inviteNewFriendsViewSetup()
         
     }
+    
+    
     
     func isValidEmail(emailStr: String) -> Bool {
         if emailStr.containsString("@") {
@@ -75,7 +83,47 @@ class FriendsViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    @IBAction func addFriendButtonPressed(sender: AnyObject) {
+        if let friendsEmailText = friendsEmailTextField.text {
+            if !friendsEmailText.isEmpty && isValidEmail(friendsEmailText) == true {
+                print(friendsEmailText)
+                
+                ClientService.profileRef.queryOrderedByChild("email").queryEqualToValue(friendsEmailText).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                    
+                    
+                    if snapshot.exists() {
+                        print("user exists")
+                    } else {
+                        print("user does not exist")
+                        self.sendInvitationEmail(friendsEmailText)
+                    }
+                    
+                })
+            }
+        }
+    }
 
+    func sendInvitationEmail(email: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([email])
+            mail.setSubject("Play Kubazar with me!")
+            mail.setMessageBody("<p>Play Kubazar with me!</p>", isHTML: true)
+            
+           presentViewController(mail, animated: true, completion: nil)
+        } else {
+            presentViewController(Alerts.showErrorMessage("You aren't currently able to send an invitation email. Please try again later."), animated: true, completion: nil)
+        }
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true) { 
+            self.inviteNewFriendsViewSetup()
+        }
+        
+    }
     
     func addFriend() {
         

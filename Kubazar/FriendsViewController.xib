@@ -61,6 +61,20 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fgj-2H-us2">
+                            <rect key="frame" x="134" y="199" width="95" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="95" id="KVy-DQ-kJa"/>
+                                <constraint firstAttribute="height" constant="30" id="etA-Uq-m9K"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                            <state key="normal" title="+ add friend" backgroundImage="Continue">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="addFriendButtonPressed:" destination="-1" eventType="touchUpInside" id="9u9-n1-UJE"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.35294117650000001" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -68,8 +82,10 @@
                         <constraint firstAttribute="width" constant="250" id="7ro-4P-Mz3"/>
                         <constraint firstItem="x8T-YO-QOi" firstAttribute="top" secondItem="inV-x7-lsk" secondAttribute="top" constant="24" id="Cca-rw-yh7"/>
                         <constraint firstItem="x8T-YO-QOi" firstAttribute="centerX" secondItem="inV-x7-lsk" secondAttribute="centerX" id="H56-6t-6xH"/>
+                        <constraint firstAttribute="bottom" secondItem="Fgj-2H-us2" secondAttribute="bottom" constant="21" id="IrX-0x-36L"/>
                         <constraint firstItem="Kt0-b7-phS" firstAttribute="top" secondItem="x8T-YO-QOi" secondAttribute="bottom" constant="18" id="Luz-04-Vnf"/>
                         <constraint firstAttribute="trailing" secondItem="Kt0-b7-phS" secondAttribute="trailing" constant="8" id="eg8-Xa-eqc"/>
+                        <constraint firstAttribute="trailing" secondItem="Fgj-2H-us2" secondAttribute="trailing" constant="21" id="rzm-R4-rer"/>
                         <constraint firstItem="Kt0-b7-phS" firstAttribute="leading" secondItem="inV-x7-lsk" secondAttribute="leading" constant="8" id="sLI-NN-eZM"/>
                     </constraints>
                 </view>
