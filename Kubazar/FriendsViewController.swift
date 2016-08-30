@@ -45,20 +45,17 @@ class FriendsViewController: UIViewController, UITextFieldDelegate, MFMailCompos
     
     override func viewWillAppear(animated: Bool) {
          inviteNewFriendsView.alpha = 0
-        xButton.alpha = 0
     }
     
     func inviteNewFriendsViewSetup() {
         inviteNewFriendsView.layer.cornerRadius = 33
         inviteNewFriendsView.alpha = 1
-        xButton.alpha = 1
         inviteNewFriendsButton.alpha = 0
     }
     
     
     
     @IBAction func xButtonPressed(sender: AnyObject) {
-        xButton.alpha = 0
         inviteNewFriendsView.alpha = 0
         inviteNewFriendsButton.alpha = 1
         friendsEmailTextField.text? = ""

@@ -40,24 +40,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inV-x7-lsk" userLabel="Invite New Friends View">
                     <rect key="frame" x="175" y="175" width="250" height="250"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your friend's email address:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8T-YO-QOi">
-                            <rect key="frame" x="-14" y="24" width="277" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="236" id="7Z4-9E-qxc"/>
-                                <constraint firstAttribute="width" constant="277" id="cfe-vV-Y9h"/>
-                                <constraint firstAttribute="height" constant="21" id="eZ1-ey-3qi"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="7Z4-9E-qxc"/>
-                                </mask>
-                            </variation>
-                        </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your friend's email." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kt0-b7-phS">
-                            <rect key="frame" x="8" y="63" width="234" height="30"/>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a friend's email." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kt0-b7-phS">
+                            <rect key="frame" x="8" y="110" width="234" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
@@ -75,16 +59,32 @@
                                 <action selector="addFriendButtonPressed:" destination="-1" eventType="touchUpInside" id="9u9-n1-UJE"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97a-6d-aaJ">
+                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                            <color key="backgroundColor" red="0.35294117650000001" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="MI0-1S-TNt"/>
+                                <constraint firstAttribute="width" constant="30" id="QGX-Iz-pnp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                            <state key="normal" title="X">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="xButtonPressed:" destination="-1" eventType="touchUpInside" id="a1D-7d-938"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.35294117650000001" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="2Kw-Ul-kv9"/>
                         <constraint firstAttribute="width" constant="250" id="7ro-4P-Mz3"/>
-                        <constraint firstItem="x8T-YO-QOi" firstAttribute="top" secondItem="inV-x7-lsk" secondAttribute="top" constant="24" id="Cca-rw-yh7"/>
-                        <constraint firstItem="x8T-YO-QOi" firstAttribute="centerX" secondItem="inV-x7-lsk" secondAttribute="centerX" id="H56-6t-6xH"/>
+                        <constraint firstItem="97a-6d-aaJ" firstAttribute="top" secondItem="inV-x7-lsk" secondAttribute="top" id="HW4-0F-Fph"/>
                         <constraint firstAttribute="bottom" secondItem="Fgj-2H-us2" secondAttribute="bottom" constant="21" id="IrX-0x-36L"/>
-                        <constraint firstItem="Kt0-b7-phS" firstAttribute="top" secondItem="x8T-YO-QOi" secondAttribute="bottom" constant="18" id="Luz-04-Vnf"/>
+                        <constraint firstItem="Kt0-b7-phS" firstAttribute="centerY" secondItem="inV-x7-lsk" secondAttribute="centerY" id="L9N-aa-ldz"/>
                         <constraint firstAttribute="trailing" secondItem="Kt0-b7-phS" secondAttribute="trailing" constant="8" id="eg8-Xa-eqc"/>
+                        <constraint firstItem="97a-6d-aaJ" firstAttribute="leading" secondItem="inV-x7-lsk" secondAttribute="leading" id="hcp-69-NEd"/>
+                        <constraint firstItem="Kt0-b7-phS" firstAttribute="centerX" secondItem="inV-x7-lsk" secondAttribute="centerX" id="j0j-yb-spS"/>
                         <constraint firstAttribute="trailing" secondItem="Fgj-2H-us2" secondAttribute="trailing" constant="21" id="rzm-R4-rer"/>
                         <constraint firstItem="Kt0-b7-phS" firstAttribute="leading" secondItem="inV-x7-lsk" secondAttribute="leading" constant="8" id="sLI-NN-eZM"/>
                     </constraints>
@@ -109,21 +109,6 @@
                         <action selector="inviteNewFriendsButtonPressed:" destination="-1" eventType="touchUpInside" id="fdM-I6-ee1"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97a-6d-aaJ">
-                    <rect key="frame" x="175" y="153" width="22" height="22"/>
-                    <color key="backgroundColor" red="0.35294117650000001" green="0.74901960779999999" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="22" id="MI0-1S-TNt"/>
-                        <constraint firstAttribute="width" constant="22" id="QGX-Iz-pnp"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                    <state key="normal" title="X">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="xButtonPressed:" destination="-1" eventType="touchUpInside" id="a1D-7d-938"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -131,9 +116,7 @@
                 <constraint firstItem="inV-x7-lsk" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Juh-QX-gGa"/>
                 <constraint firstAttribute="trailing" secondItem="k8j-3t-GV0" secondAttribute="trailing" id="Lki-CI-6RI"/>
                 <constraint firstItem="k8j-3t-GV0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NZO-bB-p6n"/>
-                <constraint firstItem="inV-x7-lsk" firstAttribute="top" secondItem="97a-6d-aaJ" secondAttribute="bottom" id="QWf-ze-AuI"/>
                 <constraint firstAttribute="trailing" secondItem="CQt-Sq-r2u" secondAttribute="trailing" id="U6J-FO-Yuf"/>
-                <constraint firstItem="97a-6d-aaJ" firstAttribute="leading" secondItem="inV-x7-lsk" secondAttribute="leading" id="Us5-SC-Ps8"/>
                 <constraint firstAttribute="bottom" secondItem="5kj-yb-I2Q" secondAttribute="bottom" constant="78" id="XNf-wQ-RaL"/>
                 <constraint firstItem="5kj-yb-I2Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kvF-qN-0Yo"/>
                 <constraint firstItem="5kj-yb-I2Q" firstAttribute="top" secondItem="CQt-Sq-r2u" secondAttribute="bottom" constant="202" id="nIL-gu-GJa"/>
