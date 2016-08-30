@@ -25,6 +25,8 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        inviteNewFriendsViewSetup()
+        
        friendsEmailTextField.autocapitalizationType = .None
         
        friendsEmailTextField.delegate = self
@@ -56,6 +58,7 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     override func viewWillAppear(animated: Bool) {
          inviteNewFriendsView.alpha = 0
+        inviteNewFriendsButton.alpha = 1
     }
     
     func inviteNewFriendsViewSetup() {
@@ -98,22 +101,33 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
         
         if let friendsEmailText = friendsEmailTextField.text?.lowercaseString {
             if !friendsEmailText.isEmpty && isValidEmail(friendsEmailText) == true {
+                
                 print(friendsEmailText)
                 
-                ClientService.profileRef.queryOrderedByChild("email").queryEqualToValue(friendsEmailText).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                ClientService.profileRef.queryOrderedByChild("email").queryEqualToValue(friendsEmailText).observeSingleEventOfType(.ChildAdded, withBlock: { (snapshot) in
+                    
                     
                     if snapshot.exists() {
                         
-                       let friendUID = snapshot.key
+                        let friendUID = snapshot.value?.objectForKey("uid") as! String
                         
-                        print("friendUID is \(friendUID)")
                         
-                       self.addExistingUserAsFriend(friendUID, email: friendsEmailText)
                         
-                    
+                        print(snapshot.value)
+                        
                        print(snapshot)
                         
                         print("user exists")
+                   
+                        
+//                       print(snapshot.valueForUndefinedKey("uid"))
+                        
+//                        print(snapshot.value?.objectForKey("uid"))
+//                        
+//                        let friendUID = snapshot.value?.
+//                       
+                       self.addExistingUserAsFriend(friendUID, email: friendsEmailText)
+                        
                     } else {
                         print("user does not exist")
                         self.sendInvitationEmail(friendsEmailText)
@@ -146,8 +160,6 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     }
     
     func addExistingUserAsFriend(friendUID: String, email: String) {
-        
-    
         
         let currentUserUID = ClientService.getCurrentUserUID()
         let currentUserFriendsRef = ClientService.friendsRef.child("\(currentUserUID)")
