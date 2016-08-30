@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class FriendsViewController: UIViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
+class FriendsViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate {
     
     
     @IBOutlet weak var xButton: UIButton!
@@ -26,8 +26,17 @@ class FriendsViewController: UIViewController, UITextFieldDelegate, MFMailCompos
         super.viewDidLoad()
         
        friendsEmailTextField.delegate = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
     }
     
     //table view for friends list
