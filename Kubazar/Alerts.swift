@@ -19,6 +19,14 @@ struct Alerts {
         return alert
     }
     
+    static func showSuccessMessage(successMessage: String) -> UIAlertController {
+        let alert = UIAlertController(title: "Yay!", message: successMessage, preferredStyle: .Alert)
+        let okayAction = UIAlertAction(title: "Okay", style: .Default) { (action: UIAlertAction) in
+        }
+        alert.addAction(okayAction)
+        return alert
+    }
+    
 //    static func showStartHaikuMesssage(anyMessage: String) -> UIAlertController {
 //    let alert = UIAlertController(title: nil, message: anyMessage, preferredStyle: .ActionSheet)
 //       let startAction = UIAlertAction(title: "Start", style: .Default) { (action) in
