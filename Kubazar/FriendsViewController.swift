@@ -22,6 +22,8 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
 
     @IBOutlet weak var inviteNewFriendsButton: UIButton!
     
+    var arrayOfFriendUIDs = [String]()
+    
     var arrayOfUserFriends = [User]()
     
     
@@ -88,7 +90,32 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
         
  ClientService.getFriendUIDsForCurrentUser { (arrayOfFriendUIDs) in
     print("array of friend UIDs for current user is: \(arrayOfFriendUIDs)")
+    
+    self.arrayOfFriendUIDs = arrayOfFriendUIDs
+    
+    
+    for uid in self.arrayOfFriendUIDs {
+        ClientService.profileRef.child("\(uid)").queryOrderedByKey().observeSingleEventOfType(.Value, withBlock: { (friend) in
+            let uid = friend.value?.objectForKey("uid") as! String
+            let email = friend.value?.objectForKey("email") as! String
+            let username = friend.value?.objectForKey("username") as! String
+            let user = User(username: username, email: email, uid: uid)
+            self.arrayOfUserFriends.append(user)
+            self.friendsTableView.reloadData()
+               print("#0: PRINT SELF.ARRAYOFUSERFRIENDS: \(self.arrayOfUserFriends)")
+        })
+        
+        print("#1: PRINT SELF.ARRAYOFUSERFRIENDS: \(self.arrayOfUserFriends)")
+    }
+
+    
+    print("#1: \(self.arrayOfFriendUIDs)")
+    print("#2: \(self.arrayOfUserFriends)")
+    
         }
+        
+//        print("#2: \(self.arrayOfFriendUIDs)") this one don't work
+
         
          inviteNewFriendsView.alpha = 0
         inviteNewFriendsButton.alpha = 1
@@ -246,7 +273,9 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
         
         //there should be an if statement here if getFriendsForCurrentUser returns nil
         
-        return sampleData.count
+//        return sampleData.count
+        
+        return arrayOfUserFriends.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -255,30 +284,25 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = friendsTableView.dequeueReusableCellWithIdentifier("friendsCell", forIndexPath: indexPath) as! FriendsTableViewCell
-//        
-//        let friend = arrayOfUserFriends[indexPath.row]
-//        
-//        cell.friendsUsername.text = friend.username
         
-        var cell: UITableViewCell?
+        var cell: FriendsTableViewCell
         
-        cell = tableView.dequeueReusableCellWithIdentifier("friendsCell", forIndexPath: indexPath) as! FriendsTableViewCell
+        cell = friendsTableView.dequeueReusableCellWithIdentifier("friendsCell", forIndexPath: indexPath) as! FriendsTableViewCell
         
-        let previewDetail = sampleData[indexPath.row]
-        cell!.textLabel?.text = previewDetail.title
+        let previewDetail = arrayOfUserFriends[indexPath.row]
+        cell.friendsUsername.text = previewDetail.username
         
-        return cell!
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("did select: \(indexPath.row)")
     
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func keyboardWillHide(sender: NSNotification) {

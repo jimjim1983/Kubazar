@@ -48,34 +48,41 @@ struct ClientService {
     }
     
     
-    static func getFriendsForCurrentUser(currentUserUID: String) ->  [User] {
-        
-        var arrayOfUserFriends = [User]()
-        var arrayOfUserFriendsUIDs = [String]()
-//        friendsRef.child(currentUserUID).queryOrderedByKey().observeSingleEventOfType(.Value) { (snapshot) in
-//            <#code#>
+//    static func getArrayOfUsersFromArrayOfUIDs(arrayOfUIDs: [String]) ->  [User] {
+//        
+//        var arrayOfUsers = [User]()
+////
+//        for uid in arrayOfUIDs {
+//            profileRef.child("\(uid)").queryOrderedByKey().observeSingleEventOfType(.Value, withBlock: { (friend) in
+//                let uid = friend.value?.objectForKey("uid") as! String
+//                let email = friend.value?.objectForKey("email") as! String
+//                let username = friend.value?.objectForKey("username") as! String
+//                let user = User(username: username, email: email, uid: uid)
+//                arrayOfUsers.append(user)
+//            })
 //        }
+//        return arrayOfUsers
+//    }
+    
+    
+    //CODE BELOW DOESN'T WORK, WHY??????
+    
+    static func getArrayOfUsersFromArrayOfUIDs(arrayOfUIDs: [String], closure: [User] -> Void) {
         
-        friendsRef.child("\(currentUserUID)").queryOrderedByChild("key").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-            
-            for friend in snapshot.children {
-                let uid = friend.value.objectForKey("uid") as! String
-                arrayOfUserFriendsUIDs.append(uid)
-            }
-        })
+        var arrayOfUsers = [User]()
         
-        for uid in arrayOfUserFriendsUIDs {
-            profileRef.child("\(uid)").queryOrderedByChild("key").observeSingleEventOfType(.Value, withBlock: { (friend) in
+        for uid in arrayOfUIDs {
+            ClientService.profileRef.child("\(uid)").queryOrderedByKey().observeSingleEventOfType(.Value, withBlock: { (friend) in
                 let uid = friend.value?.objectForKey("uid") as! String
                 let email = friend.value?.objectForKey("email") as! String
                 let username = friend.value?.objectForKey("username") as! String
                 let user = User(username: username, email: email, uid: uid)
-                arrayOfUserFriends.append(user)
-            })
-        }
-        return arrayOfUserFriends
+                arrayOfUsers.append(user)
+        })
+            
+        closure(arrayOfUsers)
     }
-    
+    }
     
     
     static func getFriendUIDsForCurrentUser(closure: [String] -> Void) {
