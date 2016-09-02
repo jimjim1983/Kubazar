@@ -12,7 +12,8 @@ import Firebase
 struct User {
     
     let username: String!
-    let emailAddress: String!
+    let email: String!
+    let uid: String!
 //    let birthdate: String!
     // let
     

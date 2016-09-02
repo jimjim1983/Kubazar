@@ -41,46 +41,64 @@ struct ClientService {
         return user.uid } else {
         return "no user id"
     }
+    }
     
-    
-    func checkIfUserExistsByEmailOrUsername(closure: String -> Void) {
+    static func checkIfUserExistsByEmailOrUsername(closure: String -> Void) {
         
     }
     
-//    let user = FIRAuth.auth()?.currentUser
-//    return user!.uid
     
-  }
+    static func getFriendsForCurrentUser(currentUserUID: String) ->  [User] {
+        
+        var arrayOfUserFriends = [User]()
+        var arrayOfUserFriendsUIDs = [String]()
+//        friendsRef.child(currentUserUID).queryOrderedByKey().observeSingleEventOfType(.Value) { (snapshot) in
+//            <#code#>
+//        }
+        
+        friendsRef.child("\(currentUserUID)").queryOrderedByChild("key").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            
+            for friend in snapshot.children {
+                let uid = friend.value.objectForKey("uid") as! String
+                arrayOfUserFriendsUIDs.append(uid)
+            }
+        })
+        
+        for uid in arrayOfUserFriendsUIDs {
+            profileRef.child("\(uid)").queryOrderedByChild("key").observeSingleEventOfType(.Value, withBlock: { (friend) in
+                let uid = friend.value?.objectForKey("uid") as! String
+                let email = friend.value?.objectForKey("email") as! String
+                let username = friend.value?.objectForKey("username") as! String
+                let user = User(username: username, email: email, uid: uid)
+                arrayOfUserFriends.append(user)
+            })
+        }
+        return arrayOfUserFriends
+    }
     
-//
-//    static func getCurrentUser() -> User {
-//       
-//        var name = String()
-//        var email = String()
-//        
-//        if let user = FIRAuth.auth()?.currentUser {
-//            
-//            
-//            name = user.displayName!
-//            email = user.email!
-////            let photoUrl = user.photoURL
-////            let uid = user.uid;
-//            // The user's ID, unique to the Firebase project.
-//            // Do NOT use this value to authenticate with
-//            // your backend server, if you have one. Use
-//            // getTokenWithCompletion:completion: instead.
-////        } else {
-////            // No user is signed in.
-////        }
-//        
-//        
-//    }
-//        
-//        let currentUser = User(username: name, emailAddress: email)
-//        
-//        print(currentUser)
-//        
-//        return currentUser
-//    }
+    
+    
+    static func getFriendUIDsForCurrentUser(closure: [String] -> Void) {
+        
+        let currentUserUiD = getCurrentUserUID()
+        
+        friendsRef.child("\(currentUserUiD)").queryOrderedByKey().observeEventType(.Value, withBlock: { snapshot in
+            
+            var friendUIDs = [String]()
+            
+            for item in snapshot.children {
+                
+                let friendUID = item.value.objectForKey("uid") as! String
+                
+                friendUIDs.append(friendUID)
+            }
+            
+            //             print(users)
+            
+            closure(friendUIDs)
+            
+        })
+        
+    }
 
 }

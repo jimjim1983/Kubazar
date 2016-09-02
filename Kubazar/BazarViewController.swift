@@ -61,19 +61,21 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         activeTableView.dataSource = self
         
         activeTableView.delegate = self
         
         let activeNib = UINib.init(nibName: "ActiveHaikusTableViewCell", bundle: nil)
-        self.activeTableView.registerNib(activeNib, forCellReuseIdentifier: "activeCell")
+        activeTableView.registerNib(activeNib, forCellReuseIdentifier: "activeCell")
         
         completedTableView.dataSource = self
         
         completedTableView.delegate = self
         
         let completedNib = UINib.init(nibName: "CompletedHaikusTableViewCell", bundle: nil)
-        self.completedTableView.registerNib(completedNib, forCellReuseIdentifier: "completedCell")
+        completedTableView.registerNib(completedNib, forCellReuseIdentifier: "completedCell")
     }
     
     
@@ -84,6 +86,8 @@ class BazarViewController: UIViewController, UITableViewDataSource, UITableViewD
 
     
     override func viewWillAppear(animated: Bool) {
+        
+       
         
         let kubazarDarkGreen = UIColor(red: 12.0/255, green: 87.0/255, blue: 110.0/255, alpha: 1)
 

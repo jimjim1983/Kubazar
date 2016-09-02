@@ -9,7 +9,7 @@
 import UIKit
 import MessageUI
 
-class FriendsViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate {
+class FriendsViewController: UIViewController, MFMailComposeViewControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet weak var xButton: UIButton!
@@ -22,10 +22,38 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
 
     @IBOutlet weak var inviteNewFriendsButton: UIButton!
     
+    var arrayOfUserFriends = [User]()
+    
+    
+    struct PreviewDetail {
+        let title: String
+        let preferredHeight: Double
+    }
+    
+    let sampleData = [
+        PreviewDetail(title: "Small", preferredHeight: 160.0),
+        PreviewDetail(title: "Medium", preferredHeight: 320.0),
+        PreviewDetail(title: "Large", preferredHeight: 0.0) // 0.0 to get the default height.
+    ]
+    
+    let sampleData1 = [
+        PreviewDetail(title: "One", preferredHeight: 160.0),
+        PreviewDetail(title: "Two", preferredHeight: 320.0),
+        PreviewDetail(title: "Three", preferredHeight: 0.0), // 0.0 to get the default height.
+        PreviewDetail(title: "More", preferredHeight: 0.0) // 0.0 to get the default height.
+    ]
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        inviteNewFriendsViewSetup()
+        friendsTableView.dataSource = self
+        friendsTableView.delegate = self
+        friendsTableView.allowsSelection = true
+        
+        let friendsNib = UINib.init(nibName: "FriendsTableViewCell", bundle: nil)
+        friendsTableView.registerNib(friendsNib, forCellReuseIdentifier: "friendsCell")
         
        friendsEmailTextField.autocapitalizationType = .None
         
@@ -34,7 +62,7 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(FriendsViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
 
-
+        friendsTableView.reloadData()
         // Do any additional setup after loading the view.
     }
         
@@ -57,6 +85,11 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+ ClientService.getFriendUIDsForCurrentUser { (arrayOfFriendUIDs) in
+    print("array of friend UIDs for current user is: \(arrayOfFriendUIDs)")
+        }
+        
          inviteNewFriendsView.alpha = 0
         inviteNewFriendsButton.alpha = 1
     }
@@ -111,22 +144,11 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
                         
                         let friendUID = snapshot.value?.objectForKey("uid") as! String
                         
+                      self.addExistingUserAsFriend(friendUID, email: friendsEmailText)
                         
+                    self.friendsTableView.reloadData()
                         
-                        print(snapshot.value)
-                        
-                       print(snapshot)
-                        
-                        print("user exists")
-                   
-                        
-//                       print(snapshot.valueForUndefinedKey("uid"))
-                        
-//                        print(snapshot.value?.objectForKey("uid"))
-//                        
-//                        let friendUID = snapshot.value?.
-//                       
-                       self.addExistingUserAsFriend(friendUID, email: friendsEmailText)
+                        //should also send 
                         
                     } else {
                         print("user does not exist")
@@ -179,6 +201,8 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
                 
                 currentUserFriendsRef.child("\(friendUID)/email").setValue(email)
                 
+                currentUserFriendsRef.child("\(friendUID)/uid").setValue(friendUID)
+                
 //                ClientService.profileRef.child("\(uid)/username").setValue(signupUsername)
 //                
             }
@@ -209,9 +233,52 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
 //        friendsCurrentUserRef.updateChildValues(<#T##values: [NSObject : AnyObject]##[NSObject : AnyObject]#>)
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+//        let currentUserUID = ClientService.getCurrentUserUID()
+//
+//        arrayOfUserFriends = ClientService.getFriendsForCurrentUser(currentUserUID)
+//        
+//        print("THIS IS THE ARRAY OF USER FRIENDS \(arrayOfUserFriends)")
+        
+//        return arrayOfUserFriends.count
+        
+        //there should be an if statement here if getFriendsForCurrentUser returns nil
+        
+        return sampleData.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 50
+        //adjust height later
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = friendsTableView.dequeueReusableCellWithIdentifier("friendsCell", forIndexPath: indexPath) as! FriendsTableViewCell
+//        
+//        let friend = arrayOfUserFriends[indexPath.row]
+//        
+//        cell.friendsUsername.text = friend.username
+        
+        var cell: UITableViewCell?
+        
+        cell = tableView.dequeueReusableCellWithIdentifier("friendsCell", forIndexPath: indexPath) as! FriendsTableViewCell
+        
+        let previewDetail = sampleData[indexPath.row]
+        cell!.textLabel?.text = previewDetail.title
+        
+        return cell!
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("did select: \(indexPath.row)")
+    
     }
     
     func keyboardWillHide(sender: NSNotification) {
@@ -238,6 +305,8 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
             })
         }
     }
+    
+    
 
     
     

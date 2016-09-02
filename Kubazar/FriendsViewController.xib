@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsViewController" customModule="Kubazar" customModuleProvider="target">
             <connections>
                 <outlet property="friendsEmailTextField" destination="Kt0-b7-phS" id="5tw-fp-bGU"/>
-                <outlet property="friendsTableView" destination="CQt-Sq-r2u" id="z6k-KC-SS7"/>
+                <outlet property="friendsTableView" destination="CQt-Sq-r2u" id="Lze-ii-1lL"/>
                 <outlet property="inviteNewFriendsButton" destination="5kj-yb-I2Q" id="oz1-K4-tK2"/>
                 <outlet property="inviteNewFriendsView" destination="inV-x7-lsk" id="xzd-Kl-DrL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

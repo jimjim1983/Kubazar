@@ -14,6 +14,8 @@
 		A67786701D086EEE0057581D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A677866E1D086EEE0057581D /* LaunchScreen.storyboard */; };
 		A677867B1D086EEE0057581D /* KubazarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A677867A1D086EEE0057581D /* KubazarTests.swift */; };
 		A67786861D086EEE0057581D /* KubazarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67786851D086EEE0057581D /* KubazarUITests.swift */; };
+		F21B43371D761D420031F8F2 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21B43351D761D420031F8F2 /* FriendsTableViewCell.swift */; };
+		F21B43381D761D420031F8F2 /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F21B43361D761D420031F8F2 /* FriendsTableViewCell.xib */; };
 		F252A5C61D13007700CBDFD2 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */; };
 		F252A5C81D13008600CBDFD2 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */; };
 		F252A5CA1D13009300CBDFD2 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */; };
@@ -82,6 +84,8 @@
 		CF9460E9538604A3E89F69A5 /* Pods_Kubazar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kubazar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C622D14510274C6504EBC6 /* Pods_KubazarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KubazarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1ABCD4F7A4EDB1AF70E173 /* Pods-KubazarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KubazarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KubazarTests/Pods-KubazarTests.release.xcconfig"; sourceTree = "<group>"; };
+		F21B43351D761D420031F8F2 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		F21B43361D761D420031F8F2 /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		F252A5C51D13007700CBDFD2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F252A5C71D13008600CBDFD2 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F252A5C91D13009300CBDFD2 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				F2D2DE4A1D6707EF0085B947 /* View Controllers */,
+				F21B43391D761D640031F8F2 /* Detail View Controllers */,
 				F2D2DE4B1D67087E0085B947 /* Table View Cells */,
 				F27718281D41E0B100EBB668 /* User.swift */,
 				A677866A1D086EEE0057581D /* AppDelegate.swift */,
@@ -226,6 +231,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F21B43391D761D640031F8F2 /* Detail View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Detail View Controllers";
+			sourceTree = "<group>";
+		};
 		F252A5C41D12FEDA00CBDFD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +282,8 @@
 		F2D2DE4B1D67087E0085B947 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F21B43351D761D420031F8F2 /* FriendsTableViewCell.swift */,
+				F21B43361D761D420031F8F2 /* FriendsTableViewCell.xib */,
 				F2BF11901D57B1C300788E1D /* ActiveHaikusTableViewCell.swift */,
 				F2BF11911D57B1C300788E1D /* ActiveHaikusTableViewCell.xib */,
 				F2BF11941D57B1D200788E1D /* CompletedHaikusTableViewCell.swift */,
@@ -403,6 +417,7 @@
 				F2D2DE531D6729F00085B947 /* CompletedDetailViewController.xib in Resources */,
 				F2C1AA051D36D7C90063089F /* InfoViewController.xib in Resources */,
 				F2C1AA011D36D7B80063089F /* FriendsViewController.xib in Resources */,
+				F21B43381D761D420031F8F2 /* FriendsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +568,7 @@
 				F2BF11921D57B1C300788E1D /* ActiveHaikusTableViewCell.swift in Sources */,
 				F2C1AA001D36D7B80063089F /* FriendsViewController.swift in Sources */,
 				F2C1A9F41D36C0C30063089F /* SignupViewController.swift in Sources */,
+				F21B43371D761D420031F8F2 /* FriendsTableViewCell.swift in Sources */,
 				F2C1A9FC1D36D7A60063089F /* StartViewController.swift in Sources */,
 				F2C1A9EC1D36AA960063089F /* WelcomeViewController.swift in Sources */,
 				F2D2DE521D6729F00085B947 /* CompletedDetailViewController.swift in Sources */,
