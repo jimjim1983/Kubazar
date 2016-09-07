@@ -88,6 +88,9 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     override func viewWillAppear(animated: Bool) {
         
+        
+        arrayOfUserFriends = []
+        
  ClientService.getFriendUIDsForCurrentUser { (arrayOfFriendUIDs) in
     print("array of friend UIDs for current user is: \(arrayOfFriendUIDs)")
     
