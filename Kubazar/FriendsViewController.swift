@@ -268,19 +268,6 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        
-//        let currentUserUID = ClientService.getCurrentUserUID()
-//
-//        arrayOfUserFriends = ClientService.getFriendsForCurrentUser(currentUserUID)
-//        
-//        print("THIS IS THE ARRAY OF USER FRIENDS \(arrayOfUserFriends)")
-        
-//        return arrayOfUserFriends.count
-        
-        //there should be an if statement here if getFriendsForCurrentUser returns nil
-        
-//        return sampleData.count
-        
         return arrayOfUserFriends.count
     }
     
@@ -295,8 +282,8 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
         
         cell = friendsTableView.dequeueReusableCellWithIdentifier("friendsCell", forIndexPath: indexPath) as! FriendsTableViewCell
         
-        let previewDetail = arrayOfUserFriends[indexPath.row]
-        cell.friendsUsername.text = previewDetail.username
+        let friend = arrayOfUserFriends[indexPath.row]
+        cell.friendsUsername.text = friend.username
         
         return cell
     }
