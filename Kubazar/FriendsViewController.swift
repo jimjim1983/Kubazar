@@ -132,6 +132,9 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     
     @IBAction func xButtonPressed(sender: AnyObject) {
+        
+         view.endEditing(true)
+        
         inviteNewFriendsView.alpha = 0
         inviteNewFriendsButton.alpha = 1
         friendsEmailTextField.text? = ""
@@ -159,7 +162,7 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     @IBAction func addFriendButtonPressed(sender: AnyObject) {
         
-//        view.endEditing(true)
+        view.endEditing(true)
         
         if let friendsEmailText = friendsEmailTextField.text?.lowercaseString {
             if !friendsEmailText.isEmpty && isValidEmail(friendsEmailText) == true {
