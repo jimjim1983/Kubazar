@@ -170,7 +170,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     
 
     @IBAction func firstContinueButtonPressed(sender: AnyObject) {
-        
+        view.endEditing(true)
         firstView.resignFirstResponder()
 //        firstView.endEditing(true)
         
@@ -201,6 +201,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
   
     @IBAction func secondContinueButtonPressed(sender: AnyObject) {
         
+    view.endEditing(true)
     createNewUser()
         
     }
@@ -304,13 +305,13 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func firstViewBackButtonPressed(sender: AnyObject) {
-        
+        view.endEditing(true)
         dismissViewControllerAnimated(true, completion:  nil)
     }
     
     
     @IBAction func secondViewBackButtonPressed(sender: AnyObject) {
-        
+        view.endEditing(true)
         secondView.alpha = 0
         thirdView.alpha = 0
         firstView.alpha = 1
