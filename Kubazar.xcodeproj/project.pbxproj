@@ -259,10 +259,10 @@
 		F2D2DE4A1D6707EF0085B947 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F2C1A9F21D36C0C30063089F /* SignupViewController.swift */,
-				F2C1A9F31D36C0C30063089F /* SignupViewController.xib */,
 				F2C1A9EA1D36AA960063089F /* WelcomeViewController.swift */,
 				F2C1A9EB1D36AA960063089F /* WelcomeViewController.xib */,
+				F2C1A9F21D36C0C30063089F /* SignupViewController.swift */,
+				F2C1A9F31D36C0C30063089F /* SignupViewController.xib */,
 				F2C1A9F61D36D7960063089F /* BazarViewController.swift */,
 				F2C1A9F71D36D7960063089F /* BazarViewController.xib */,
 				F2D2DE4C1D6729DB0085B947 /* ActiveDetailViewController.swift */,

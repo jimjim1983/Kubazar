@@ -236,7 +236,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                     
-                    self.secondView.endEditing(true)
+//                    self.secondView.endEditing(true)
                     self.secondView.alpha = 0
                     self.thirdView.alpha = 1
                    

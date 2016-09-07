@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -34,7 +34,7 @@
                     </items>
                 </navigationBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CQt-Sq-r2u">
-                    <rect key="frame" x="0.0" y="67" width="600" height="223"/>
+                    <rect key="frame" x="0.0" y="67" width="600" height="409"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inV-x7-lsk" userLabel="Invite New Friends View">
@@ -118,7 +118,7 @@
                 <constraint firstAttribute="trailing" secondItem="CQt-Sq-r2u" secondAttribute="trailing" id="U6J-FO-Yuf"/>
                 <constraint firstAttribute="bottom" secondItem="5kj-yb-I2Q" secondAttribute="bottom" constant="78" id="XNf-wQ-RaL"/>
                 <constraint firstItem="5kj-yb-I2Q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kvF-qN-0Yo"/>
-                <constraint firstItem="5kj-yb-I2Q" firstAttribute="top" secondItem="CQt-Sq-r2u" secondAttribute="bottom" constant="202" id="nIL-gu-GJa"/>
+                <constraint firstItem="5kj-yb-I2Q" firstAttribute="top" secondItem="CQt-Sq-r2u" secondAttribute="bottom" constant="16" id="nIL-gu-GJa"/>
                 <constraint firstItem="k8j-3t-GV0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ogd-YS-kXw"/>
                 <constraint firstItem="CQt-Sq-r2u" firstAttribute="top" secondItem="k8j-3t-GV0" secondAttribute="bottom" constant="1" id="wJ7-0T-uEt"/>
                 <constraint firstItem="CQt-Sq-r2u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yIt-2H-Hew"/>

@@ -31,19 +31,15 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         
         passwordTextField.delegate = self
-        
-//        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(WelcomeViewController.changeWelcomeLabel), userInfo: nil, repeats: false)
        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(WelcomeViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
     }
     
+
+    
     override func viewDidAppear(animated: Bool) {
-        
-//        let kubazarOriginY = kubazarLogo.frame.origin.y
-        
-        kubazarLogo.alpha = 1
         
         let transformAnimation = CABasicAnimation(keyPath: "transform.translation.y")
         transformAnimation.duration = 1
@@ -53,21 +49,11 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
         transformAnimation.toValue = 180
         transformAnimation.removedOnCompletion = false
         transformAnimation.fillMode = kCAFillModeForwards
-//        kubazarLogo.layer.addAnimation(transformAnimation, forKey: nil)
-        
-        
-        
-//        UIView.animateWithDuration(2.0, animations: {
-//            self.loginButton.center.y += self.view.bounds.width
-//        })
+
     }
   
     
     override func viewWillAppear(animated: Bool) {
-
-//        setViewAlphaToZero()
-//        kubazarLogo.alpha = 1
-        
         
         kubazarLogo.transform = CGAffineTransformMakeScale(2, 2)
         
@@ -104,17 +90,8 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
             }, completion: nil)
     }
     
-    
-    func setViewAlphaToZero() {
-        loginButton.alpha = 0
-        signupButton.alpha = 0
-        emailTextField.alpha = 0
-        passwordTextField.alpha = 0
-        kubazarLogo.alpha = 0
-    }
-    
-    
     override func viewWillDisappear(animated: Bool) {
+       
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: self.view.window)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: self.view.window)
     }
@@ -148,20 +125,9 @@ class WelcomeViewController: UIViewController, UITextFieldDelegate {
             })
         }
     }
-    
-
-
-    func showLoginOrSignup() {
-        kubazarLogo.alpha = 1
-        loginButton.alpha = 1
-        signupButton.alpha = 1
-        emailTextField.alpha = 1
-        passwordTextField.alpha = 1
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func loginButtonPressed(sender: AnyObject) {

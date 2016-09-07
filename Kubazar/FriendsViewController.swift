@@ -160,14 +160,16 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     @IBAction func addFriendButtonPressed(sender: AnyObject) {
         
-        view.endEditing(true)
+//        view.endEditing(true)
         
         if let friendsEmailText = friendsEmailTextField.text?.lowercaseString {
             if !friendsEmailText.isEmpty && isValidEmail(friendsEmailText) == true {
                 
                 print(friendsEmailText)
                 
-                ClientService.profileRef.queryOrderedByChild("email").queryEqualToValue(friendsEmailText).observeSingleEventOfType(.ChildAdded, withBlock: { (snapshot) in
+                ClientService.profileRef.queryOrderedByChild("email").queryEqualToValue(friendsEmailText).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+                    
+                    print("FRIENDS ADDED \(snapshot)")
                     
                     
                     if snapshot.exists() {
@@ -176,7 +178,7 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
                         
                       self.addExistingUserAsFriend(friendUID, email: friendsEmailText)
                         
-                    self.friendsTableView.reloadData()
+//                    self.friendsTableView.reloadData()
                         
                         //should also send 
                         
