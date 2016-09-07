@@ -88,8 +88,10 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     
     override func viewWillAppear(animated: Bool) {
         
-        
+        arrayOfFriendUIDs = []
         arrayOfUserFriends = []
+        
+        friendsTableView.reloadData()
         
  ClientService.getFriendUIDsForCurrentUser { (arrayOfFriendUIDs) in
     print("array of friend UIDs for current user is: \(arrayOfFriendUIDs)")
@@ -116,9 +118,6 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
     print("#2: \(self.arrayOfUserFriends)")
     
         }
-        
-//        print("#2: \(self.arrayOfFriendUIDs)") this one don't work
-
         
          inviteNewFriendsView.alpha = 0
         inviteNewFriendsButton.alpha = 1
@@ -175,6 +174,8 @@ class FriendsViewController: UIViewController, MFMailComposeViewControllerDelega
                     if snapshot.exists() {
                         
                         let friendUID = snapshot.value?.objectForKey("uid") as! String
+                        
+                        print(friendUID)
                         
                       self.addExistingUserAsFriend(friendUID, email: friendsEmailText)
                         
